@@ -13,7 +13,7 @@ export default [
         component:Home
     },
     { 
-        path: '/search',
+        path: '/search/:keyword?',//params参数可传可不传
         component:Search
     },
     { 

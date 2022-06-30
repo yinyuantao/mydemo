@@ -39,7 +39,8 @@
             class="input-error input-xxlarge"
           />
           <button class="sui-btn btn-xlarge btn-danger" type="button">
-            搜索
+            搜索哈哈哈哈哈啊
+            
           </button>
         </form>
       </div>

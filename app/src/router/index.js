@@ -1,12 +1,34 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import routes from './routes'
 //声明使用插件
 Vue.use(VueRouter)
+import Home from '@/views/Home'
+import Search from '@/views/Search'
+import Register from '@/views/Register'
+import Login from '@/views/Login'
 
-const router = new VueRouter({ 
-    mode: 'history',
-    routes,
+export default new VueRouter({ 
+    routes:[
+        { 
+            path: '*',
+            redirect:'/home'
+        } ,
+        { 
+            path: '/home',
+            component:Home
+        },
+        { 
+            path: '/search/:keyword?',//params参数可传可不传
+            component:Search
+        },
+        { 
+            path: '/register',
+            component:Register,
+        },
+        { 
+            path: '/login',
+            component:Login,
+        },
+    ]
 });
 
-export default router;

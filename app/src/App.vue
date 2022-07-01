@@ -2,7 +2,7 @@
   <div id="app">
     <Header></Header>
     <router-view></router-view>
-    <Footer v-show="!$router.meta.isHideFooter"></Footer>
+    <Footer v-show="$router.meta.isHideFooter"></Footer>
   </div>
 </template>
 

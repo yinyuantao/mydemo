@@ -17,9 +17,13 @@ export default new VueRouter({
             path: '/home',
             component:Home
         },
-        { 
-            path: '/search/:keyword?',//params参数可传可不传
-            component:Search
+        {   
+            name:'search',
+            path: '/search',//params参数可传可不传
+            component:Search,
+            meta:{ 
+                show:true
+            }
         },
         { 
             path: '/register',
@@ -30,5 +34,6 @@ export default new VueRouter({
             component:Login,
         },
     ]
+    
 });
 

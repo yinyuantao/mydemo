@@ -1,7 +1,9 @@
-/* 
-包含所有接口请求函数的模块
-*/
-import ajax from './ajax'
+//当前模块，API进行统一管理，即对请求接口统一管理
+import requests from "@/api/request";
 
-//获取商品的三级分类列表
-export const reqBaseCategoryList = ()=>ajax.get('/product/getBaseCategoryList')
+export const reqCateCoryList = () => { 
+    return requests({ 
+        url:'/product/getBaseCategoryList',
+        method:'get'
+    })
+}

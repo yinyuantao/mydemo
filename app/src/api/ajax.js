@@ -1,44 +1,37 @@
-/* 
-对axios进行二次包装
-1. 配置通用的基础路径和超时
-2. 显示请求进度条
-3. 成功返回的数据不再是response, 而直接是响应体数据response.data
-4. 统一处理请求错误, 具体请求也可以选择处理或不处理
-*/
-import axios from 'axios'
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
 
-// 配置不显示右上角的旋转进度条, 只显示水平进度条
-NProgress.configure({ showSpinner: false }) 
+//axios二次封装
+import axios from "axios";
+//引入进度条
+import nprogress from "nprogress";
+// 引入进度条样式
+import "nprogress/nprogress.css";
+// start:进度条开始
+// done:进度条结束
 
-const service = axios.create({
-  baseURL: "/api", // 基础路径
-  timeout: 15000   // 连接请求超时时间
+//利用axios对象的方法create，创建一个asiox实例
+//requests就是axios，只不过稍微配置一下
+let requests = axios.create({
+    //基础路径
+    baseURL: "/api",
+    //请求不能超过5S
+    timeout: 5000,
+  });
+//请求拦截器，再发请求前，请求拦截器可以检测到
+requests.interceptors.request.use((config)=>{
+    //config:配置对象,对象里有一个属性，headers请求头
+    nprogress.start()
+    return config
+})
+//响应拦截器
+requests.interceptors.response.use((res)=>{
+    //响应成功的回调函数
+    nprogress.done()
+    return res.data
+},(error)=>{
+    //响应成功的回调函数
+    // alert("服务器响应数据失败")
+    console.log(1);
 })
 
-service.interceptors.request.use((config) => {
-  // 显示请求中的水平进度条
-  NProgress.start()
-
-  // 必须返回配置对象
-  return config
-})
-
-service.interceptors.response.use((response) => {
-  // 隐藏进度条
-  NProgress.done()
-  // 返回响应体数据
-  return response.data
-}, (error) => {
-  // 隐藏进度条
-  NProgress.done()
-
-  // 统一处理一下错误
-  alert( `请求出错: ${error.message||'未知错误'}`)
-
-  // 后面可以选择不处理或处理
-  return Promise.reject(error)
-})
-
-export default service
+//对外暴露
+export default requests

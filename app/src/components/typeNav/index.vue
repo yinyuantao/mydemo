@@ -1,7 +1,7 @@
 <template>
   <!-- 商品分类导航 -->
   <div class="type-nav">
-    <div class="container">
+    <div class="container" @mouseenter="leaveIndex" @mouseleave="enterShow">
       <h2 class="all">全部商品分类</h2>
       <nav class="nav">
         <a href="###">服装城</a>
@@ -13,7 +13,7 @@
         <a href="###">有趣</a>
         <a href="###">秒杀</a>
       </nav>
-      <div class="sort">
+      <div class="sort" v-show="show">
         <div class="all-sort-list2" @click="goSearch">
           <div class="item" v-for="(c1) in categoryList" :key="c1.categoryId">
             <h3>
@@ -53,8 +53,16 @@
 import {mapState} from "vuex"
 export default {
   name: 'TypeNav',
+  data(){ 
+    return{ 
+      show:true
+    }
+  },
   mounted(){ 
     this.$store.dispatch("categoryList")
+    if(this.$route.path != '/home'){ 
+      this.show = false
+    }
   },
   computed:{ 
     ...mapState({ 
@@ -77,7 +85,17 @@ export default {
         }
         this.$router.push({path:'/search',query})
       }
+    },
+    leaveIndex(){ 
+      if(this.$route.path != '/home'){ 
+      this.show = false
     }
+  },
+    enterShow(){ 
+      this.show = true
+    }
+  
+    
   }
 }
 </script>

@@ -26,7 +26,7 @@
                     <a href="">{{c2.categoryName}}</a>
                   </dt>
                   <dd>
-                    <em v-for="(c3) in c2.ategoryChild" :key="c3.categoryId" > 
+                    <em v-for="(c3) in c2.categoryChild" :key="c3.categoryId" > 
                       <a href="">{{c3.categoryName}}</a>
                     </em>
                   </dd>
@@ -174,6 +174,9 @@ export default {
               display: block;
             }
           }
+        }
+        .item:hover{ 
+          background-color: skyblue;
         }
       }
     }

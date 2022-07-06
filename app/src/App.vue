@@ -9,7 +9,7 @@
 <script>
 import Header from './components/Header'
 import Footer from './components/Footer'
-import {reqBaseCategoryList} from '@/api'
+import {reqCateCoryList} from '@/api'
 
 export default {
   name:'',
@@ -18,7 +18,7 @@ export default {
     Footer
   },
   async mounted () {
-    const result = await reqBaseCategoryList()
+    const result = await reqCateCoryList()
     console.log('result', result)
 },
 }

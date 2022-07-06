@@ -14,20 +14,28 @@
         <a href="###">秒杀</a>
       </nav>
       <div class="sort">
-        <div class="all-sort-list2">
+        <div class="all-sort-list2" @click="goSearch">
           <div class="item" v-for="(c1) in categoryList" :key="c1.categoryId">
             <h3>
-              <a href="">{{c1.categoryName}}</a>
+              <a :data-categoryName="c1.categoryName"
+                :data-category1Id="c1.categoryId">
+                {{c1.categoryName}}
+                </a>
             </h3>
             <div class="item-list clearfix">
               <div class="subitem" v-for="(c2) in c1.categoryChild" :key='c2.categoryId'>
                 <dl class="fore">
                   <dt>
-                    <a href="">{{c2.categoryName}}</a>
+                    <a :data-categoryName="c2.categoryName"
+                :data-category2Id="c2.categoryId">
+                
+                      {{c2.categoryName}}
+                      </a>
                   </dt>
                   <dd>
                     <em v-for="(c3) in c2.categoryChild" :key="c3.categoryId" > 
-                      <a href="">{{c3.categoryName}}</a>
+                      <a :data-categoryName="c3.categoryName"
+                :data-category3Id="c3.categoryId">{{c3.categoryName}}</a>
                     </em>
                   </dd>
                 </dl>
@@ -54,6 +62,22 @@ export default {
         return state.home.categoryList;
       }
     })
+  },
+  methods:{ 
+    goSearch(event){ 
+      const {categoryname,category1id,category2id,category3id} = event.target.dataset
+      if(categoryname){ 
+        const query = {categoryname: categoryname}
+        if(category1id){ 
+          query.category1Id = category1id
+        }else if (category2id) { 
+          query.category2Id = category2id
+        }else if (category3id){ 
+          query.category3Id = category3id
+        }
+        this.$router.push({path:'/search',query})
+      }
+    }
   }
 }
 </script>

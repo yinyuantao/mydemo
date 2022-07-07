@@ -10,9 +10,7 @@
     <!-- 猜你喜欢 -->
     <Like />
     <!--楼层-->
-    <Floor />
-    <!--楼层-->
-    <Floor />
+  <Floor v-for="floor in floors" :key="floor.id" :floor="floor"/>
     <!--商标-->
     <Brand />
   </div>
@@ -25,6 +23,7 @@
   import ListContainer from './ListContainer/ListContainer'
   import Rank from './Rank/Rank'
   import TodayRecommend from './TodayRecommend/TodayRecommend'
+  import { mapState } from vuex 
   export default {
     name: 'Home',
     components: {
@@ -34,6 +33,14 @@
       ListContainer,
       Rank,
       TodayRecommend,
+    },
+    mounted(){ 
+      this.$route.dispatch("getFloorList")
+    },
+    computed: { 
+      ...mapState({ 
+        floorLiST: (state) => state.home.floorLiST
+      })
     }
   }
 </script>

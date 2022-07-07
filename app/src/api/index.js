@@ -10,3 +10,5 @@ export const reqCateCoryList = () => {
 }
 
 export const reqGetBannerList =() => mockRequests.get('/banner')
+
+export const reqFloorList =() => mockRequests.get('/floor')

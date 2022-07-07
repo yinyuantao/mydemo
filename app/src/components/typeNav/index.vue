@@ -59,7 +59,6 @@ export default {
     }
   },
   mounted(){ 
-    this.$store.dispatch("categoryList")
     if(this.$route.path != '/home'){ 
       this.show = false
     }
@@ -83,7 +82,12 @@ export default {
         }else if (category3id){ 
           query.category3Id = category3id
         }
-        this.$router.push({path:'/search',query})
+        if(this.$route.params) { 
+          location.params = this.$route.params
+          location.query = query
+          this.$router.push(location)
+        }
+
       }
     },
     leaveIndex(){ 

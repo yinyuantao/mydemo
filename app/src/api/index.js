@@ -1,5 +1,6 @@
 //当前模块，API进行统一管理，即对请求接口统一管理
 import requests from "@/api/request";
+import mockRequests from './mockAjax'
 
 export const reqCateCoryList = () => { 
     return requests({ 
@@ -7,3 +8,5 @@ export const reqCateCoryList = () => {
         method:'get'
     })
 }
+
+export const reqGetBannerList =() => mockRequests.get('/banner')

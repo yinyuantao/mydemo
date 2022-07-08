@@ -1,11 +1,12 @@
-/* 
-专门请求mock接口的axios封装
-*/
-import axios from 'axios'
+import axios from "axios";
+//引入进度条
+import nprogress from 'nprogress';
+//引入进度条样式
+import "nprogress/nprogress.css";
 
 const mockAjax = axios.create({
   baseURL: "/mock", // 路径前缀
-  timeout: 10000 // 请求超时时间
+  timeout: 5000 // 请求超时时间
 })
 
 mockAjax.interceptors.request.use((config) => {

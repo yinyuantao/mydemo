@@ -10,7 +10,7 @@
     <!-- 猜你喜欢 -->
     <Like />
     <!--楼层-->
-  <Floor v-for="floor in floors" :key="floor.id" :floor="floor"/>
+  <Floor v-for="(floor,index) in floorList" :key="floor.id" :list="floor"/>
     <!--商标-->
     <Brand />
   </div>
@@ -39,7 +39,7 @@
     },
     computed: { 
       ...mapState({ 
-        floorLiST: (state) => state.home.floorLiST
+        floorLiST: (state) => state.home.floorList,
       })
     }
   }

@@ -31,7 +31,7 @@ const actions={
             commit('BANNERLIST',result.data)
         }
     },
-    async getFloorList({ commit }){ 
+    async getFloorList({ commit, state, dispatch  }){ 
         let result = await reqFloorList()
         if(result.code == 200){ 
             commit('GETFLOORLIST',result.data)

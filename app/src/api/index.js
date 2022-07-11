@@ -2,12 +2,11 @@
 import requests from "@/api/request";
 import mockRequests from './mockAjax'
 
-export const reqCateCoryList = () => { 
-    return requests({ 
+export const reqCateCoryList = () => requests({ 
         url:'/product/getBaseCategoryList',
         method:'get'
     })
-}
+
 
 export const reqGetBannerList =() => mockRequests.get('/banner')
 

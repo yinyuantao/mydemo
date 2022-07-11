@@ -23,7 +23,7 @@
   import ListContainer from './ListContainer/ListContainer'
   import Rank from './Rank/Rank'
   import TodayRecommend from './TodayRecommend/TodayRecommend'
-  import { mapState } from vuex 
+  import { mapState } from "vuex"
   export default {
     name: 'Home',
     components: {

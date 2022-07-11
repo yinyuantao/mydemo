@@ -101,7 +101,7 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import {mapState} from "vuex"
 import Swiper from 'swiper'
   export default {
     name: 'ListContainer',

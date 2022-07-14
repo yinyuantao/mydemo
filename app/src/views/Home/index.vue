@@ -10,15 +10,14 @@
     <!-- 猜你喜欢 -->
     <Like />
     <!--楼层-->
-  <Floor v-for="(floor,index) in floorList" :key="floor.id" :list="floor"/>
-    <!--商标-->
+    <Floor v-for="(floor,index) in floorList" :key="floor.id" :floor="floor" />   <!--商标-->
     <Brand />
   </div>
 </template>
 
 <script>
   import Brand from './Brand/Brand'
-  import Floor from './Floor/Floor'
+  import Floor from "./Floor/Floor.vue"
   import Like from './Like/Like'
   import ListContainer from './ListContainer/ListContainer'
   import Rank from './Rank/Rank'
@@ -35,11 +34,11 @@
       TodayRecommend,
     },
     mounted(){ 
-      this.$route.dispatch("getFloorList")
+      this.$store.dispatch("getFloorList")
     },
     computed: { 
       ...mapState({ 
-        floorLiST: (state) => state.home.floorList,
+        floorList: (state) => state.home.floorList,
       })
     }
   }

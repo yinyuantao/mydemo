@@ -58,16 +58,26 @@ export default {
   },
   methods: {
     goSearch(){ 
-      if(this.$route.query){ 
-        let location ={ 
-        name: "search",
-        params: { keyword:this.keyword || undefined}
-        }
+      //点击搜索按钮之前,如果路径当中有query参数,需要携带给search
 
+      let locations = {
+        name: "search",
+        params: { keyword: this.keyword || undefined },
+      };
+      //确定路径当中有query参数
+      if (this.$route.query.categoryName) {
+        locations.query = this.$route.query;
       }
-      location.query = this.$route.query
-      this.$router.push(location)
+
+      this.$router.push(locations);
     }
+  },
+  mounted(){ 
+        //清除关键字
+    this.$bus.$on("clearKeyword", () => {
+      console.log(123);
+      this.keyword = "";
+    });
   }
 }
 </script>

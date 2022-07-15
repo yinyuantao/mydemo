@@ -163,7 +163,7 @@ import { mapGetters } from 'vuex'
       //路由变化整理参数：手机最新的商品名字、商品1|2|3ID
       Object.assign(this.searchParams, this.$route.query, this.$route.params);
       //再次发请求
-      this.getData();
+      this.getData()
     },
   },
   }

@@ -327,12 +327,18 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
   import SearchSelector from './SearchSelector/SearchSelector'
   export default {
     name: 'Search',
-
+    mounted(){ 
+      this.$store.dispatch('getSearchList',{})
+    },
     components: {
       SearchSelector
+    },
+    computed:{ 
+      ...mapGetters(['goodsList'])
     }
   }
 </script>

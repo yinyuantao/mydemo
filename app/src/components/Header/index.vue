@@ -66,10 +66,10 @@ export default {
       };
       //确定路径当中有query参数
       if (this.$route.query.categoryName) {
-        locations.query = this.$route.query;
+             locations.query = this.$route.query;
       }
 
-      this.$router.push(locations);
+       this.$router.push(locations);
     }
   },
   mounted(){ 

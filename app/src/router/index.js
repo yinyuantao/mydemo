@@ -19,7 +19,7 @@ export default new VueRouter({
         },
         {   
             name:'search',
-            path: '/search/ :keyword?',//params参数可传可不传
+            path: '/search/:keyword?',//params参数可传可不传
             component:Search,
             meta:{ 
                 show:true

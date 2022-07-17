@@ -11,10 +11,29 @@
             </li>
           </ul>
           <ul class="fl sui-tag">
-            <li class="with-x">手机</li>
-            <li class="with-x">iphone<i>×</i></li>
-            <li class="with-x">华为<i>×</i></li>
-            <li class="with-x">OPPO<i>×</i></li>
+            <!--商品的名字的面包屑的地方  -->
+            <li class="with-x" v-show="searchParams.categoryName">
+              {{ searchParams.categoryName
+              }}<i @click="removeCategoryName">×</i>
+            </li>
+            <!-- 关键字面包屑的地方 -->
+            <li class="with-x" v-show="searchParams.keyword">
+              {{ searchParams.keyword }}<i @click="removeKeyword">×</i>
+            </li>
+            <!-- 品牌的面包屑 -->
+            <li class="with-x" v-show="searchParams.trademark">
+              {{ searchParams.trademark.split(":")[1]
+              }}<i @click="removeTradeMark">×</i>
+            </li>
+
+            <!-- 商品属性值面包屑的地方 -->
+            <li
+              class="with-x"
+              v-for="(attrValue, index) in searchParams.props"
+              :key="index"
+            >
+              {{ attrValue.split(":")[1] }}<i @click="removeAttr(index)">×</i>
+            </li>
           </ul>
         </div>
 
@@ -136,13 +155,38 @@ import { mapGetters } from 'vuex'
     components: {
       SearchSelector
     },
+    beforeMount() {
+    //商品分类搜索条件
+    // this.searchParams.category1Id = this.$route.query.category1Id;
+    // this.searchParams.category2Id = this.$route.query.category2Id;
+    // this.searchParams.category3Id = this.$route.query.category3Id;
+    // this.searchParams.categoryName = this.$route.query.categoryName;
+    Object.assign(this.searchParams, this.$route.query, this.$route.params);
+  },
     computed:{ 
       ...mapGetters(['goodsList'])
     },
     methods:{ 
       getData(){ 
        this.$store.dispatch('getSearchList',this.searchParams)
-      }
+      },
+    removeCategoryName() {
+      //搜索条件商品名字清空
+      this.searchParams.categoryName = "";
+      //骚操作:路由自己跳自己
+      this.$router.push({ name: "search", params: this.$route.params });
+      //为什么这里没有调用发请求函数？
+    },
+    //面包屑移出关键字的回调
+    removeKeyword() {
+      //清空关键字
+      this.searchParams.keyword = "";
+      //修改URL
+      this.$router.push({ name: "search", query: this.$route.query });
+      //通知兄弟组件清除关键字
+      this.$bus.$emit("clearKeyword");
+      //为什么这里没有调用发请求函数？
+    },
     },
   watch: {
     //监听组件VC的$route属性

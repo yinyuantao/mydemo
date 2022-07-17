@@ -55,11 +55,13 @@ export default {
   name: 'TypeNav',
   data(){ 
     return{ 
+      currentIndex: -1,
       show:true
     }
   },
   mounted(){ 
-    if(this.$route.path != '/home'){ 
+    this.$store.dispatch("categoryList");
+    if(this.$route.path != "/home"){ 
       this.show = false
     }
   },
@@ -72,9 +74,11 @@ export default {
   },
   methods:{ 
     goSearch(event){ 
-      const {categoryname,category1id,category2id,category3id} = event.target.dataset
+      let node = event.targer
+      let {categoryname,category1id,category2id,category3id} = node.dataset
       if(categoryname){ 
-        const query = {categoryname: categoryname}
+        let location = { name: "search"};
+        let query = {categoryname: categoryname}
         if(category1id){ 
           query.category1Id = category1id
         }else if (category2id) { 
@@ -91,6 +95,7 @@ export default {
       }
     },
     leaveIndex(){ 
+      this.currentIndex = -1
       if(this.$route.path != '/home'){ 
       this.show = false
     }

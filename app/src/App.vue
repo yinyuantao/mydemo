@@ -19,8 +19,6 @@ export default {
   },
   async mounted () {
   this.$store.dispatch("categoryList")
-    const result = await reqCateCoryList()
-    console.log('result', result)
 },
 }
 </script>

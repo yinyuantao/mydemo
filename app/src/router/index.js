@@ -6,6 +6,7 @@ import Home from '@/views/Home'
 import Search from '@/views/Search'
 import Register from '@/views/Register'
 import Login from '@/views/Login'
+import Detail from '@/views/Detail'
 
 export default new VueRouter({ 
     routes:[
@@ -32,6 +33,13 @@ export default new VueRouter({
         { 
             path: '/login',
             component:Login,
+        },
+        { 
+            path: '/detail/:skuid',
+            component:Detail,
+            meta: { 
+                show:true
+            }
         },
     ]
     

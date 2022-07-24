@@ -1,16 +1,19 @@
 <template>
     <div>
-        <file-management />
+        <Navbar></Navbar>
+        <FileManagement></FileManagement>
     </div>
 </template>
 
 
 <script>
 import FileManagement from './FileManagement/index.vue'
+import Navbar from './Navbar/index.vue'
 export default {
     name:"Home",
     components: { 
-        FileManagement
+        FileManagement,
+        Navbar
     }
 }
 </script>

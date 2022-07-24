@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="left">
     <div>您正在做的业务是：<span>人力资源</span>--<span>人力资源档案管理</span>--<span>人力资源档案登记</span></div>
-    <table>
+    <table border="1px">
       <tr>
         <td>一级机构</td>
         <td>请选择</td>
@@ -124,7 +124,11 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>>
-
+<style scoped lang="scss">
+  .left { 
+    height: 410px;
+    width: auto;
+    background-color: aquamarine;
+    margin-left: 500px;
+  }
 </style>

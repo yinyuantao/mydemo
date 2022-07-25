@@ -21,10 +21,11 @@ export default {
 <style scoped lang="scss">
     .top { 
         height: 90px;
-        width: auto;
+        width: 1900px;
         background-color: #FFD553;
         text-align: center;
         line-height: 90px;
+       position: relative;
     }
     .top span { 
         font-size: 40px;

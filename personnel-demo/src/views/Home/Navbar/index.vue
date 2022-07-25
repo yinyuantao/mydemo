@@ -1,9 +1,13 @@
 <template>
+<div class="trees"> 
   <el-tree
     :data="data"
     :props="defaultProps"
     @node-click="handleNodeClick"
+    class="navigation"
   ></el-tree>
+</div>
+
 </template>
 
 <script>
@@ -238,5 +242,20 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
+    .trees { 
+      width: 200px;
+      height: 1095px;
+      background-color: #FFFFCC;
+      float: left;
+    }
+    .navigation { 
+    width: 200px;
+    height: auto;
+    background-color: #FFFFCC;
+    color: #000;
+    font-size: 40px;
+    position: relative;
+
+  }
 </style>

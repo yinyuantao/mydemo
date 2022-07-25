@@ -126,9 +126,12 @@ export default {
 
 <style scoped lang="scss">
   .left { 
-    height: 410px;
-    width: auto;
+    height: 1095px;
+    width: 1700px;
     background-color: aquamarine;
     margin-left: 500px;
+    position: relative;
+    left: -300px;
   }
+
 </style>

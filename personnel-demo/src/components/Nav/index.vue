@@ -6,7 +6,7 @@
     @node-click="handleNodeClick"
     class="navigation"
   ></el-tree>
-  <router-view></router-view>
+  <router-view ></router-view>
 </div>
 
 </template>
@@ -249,6 +249,7 @@ export default {
       height: 1095px;
       background-color: #FFFFCC;
       float: left;
+      position: relative;
     }
     .navigation { 
     width: 200px;
@@ -257,7 +258,6 @@ export default {
     color: #000;
     font-size: 40px;
     position: relative;
-
   }
 
 </style>

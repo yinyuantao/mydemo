@@ -113,15 +113,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .left { 
-    height: 1095px;
-    width: 1700px;
-    background-color: antiquewhite;
-    margin-left: 500px;
-    position: relative;
-    left: -300px;
-  }
-
   .left table {
     margin-top: 30px; 
     border-collapse:collapse;

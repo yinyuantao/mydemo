@@ -3,7 +3,8 @@
     width: 1700px;
     background-color: antiquewhite;
     margin-left: 500px;
-    position: relative;
+    position: absolute;
     left: -299px;
-    top: -208px;
+    top: 0px;
+    float: left;
   }

@@ -1,0 +1,9 @@
+.left { 
+    height: 1095px;
+    width: 1700px;
+    background-color: antiquewhite;
+    margin-left: 500px;
+    position: relative;
+    left: -299px;
+    top: -208px;
+  }

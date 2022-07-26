@@ -9,8 +9,7 @@
         <td>请选择</td>
         <td>三级机构</td>
         <td>请选择</td>
-        <td>合并</td>
-        <td>合并</td>
+        <td rowspan="5" colspan="2"></td>
       </tr>
       <tr>
         <td>职业分类</td>
@@ -19,8 +18,6 @@
         <td>区域经理</td>
         <td>职称</td>
         <td>工程师</td>
-        <td>合并</td>
-        <td>合并</td>
       </tr>
       <tr>
         <td>姓名</td>
@@ -29,8 +26,6 @@
         <td>男</td>
         <td>Email</td>
         <td>请选择</td>
-        <td>合并</td>
-        <td>合并</td>
       </tr>
       <tr>
         <td>电话</td>
@@ -39,18 +34,11 @@
         <td>请选择</td>
         <td>手机</td>
         <td>请选择</td>
-        <td>合并</td>
-        <td>合并</td>
       </tr>
       <tr>
         <td>住址</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td colspan="3"></td>
         <td>邮编</td>
-        <td></td>
-        <td></td>
-        <td></td>
       </tr>
       <tr>
         <td>国籍</td>
@@ -104,15 +92,15 @@
       </tr>
       <tr>
         <td>个人履历</td>
-        <td></td>
+        <td colspan="7"></td>
       </tr>
       <tr>
         <td>家庭信息关系</td>
-        <td></td>
+        <td colspan="7"></td>
       </tr>
       <tr>
         <td>备注</td>
-        <td></td>
+        <td colspan="7"></td>
       </tr>
     </table>
   </div>
@@ -128,10 +116,22 @@ export default {
   .left { 
     height: 1095px;
     width: 1700px;
-    background-color: aquamarine;
+    background-color: antiquewhite;
     margin-left: 500px;
     position: relative;
     left: -300px;
+    top: -442px;
+  }
+
+  .left table {
+    margin-top: 30px; 
+    border-collapse:collapse;
+  }
+  th,td { 
+    border:1px solid black; 
+    height: 40px;
+    width: 150px;
+    text-align: center;
   }
 
 </style>

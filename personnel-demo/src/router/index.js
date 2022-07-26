@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from '@/views/Home/index.vue'
+import Nav from '@/components/Nav'
+import FileManagement from '@/views/FileManagement'
+
 
 Vue.use(Router)
 
@@ -13,8 +15,15 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'Home',
-      component: Home
+      name: 'Nav',
+      component: Nav,
+      children:[
+        { 
+          path: '/FileManagement',
+          name: 'Home',
+          component: FileManagement,
+        }
+    ]
     }
   ]
   

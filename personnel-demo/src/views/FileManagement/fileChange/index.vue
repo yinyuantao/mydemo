@@ -5,20 +5,32 @@
         >人力资源档案登记</span
       >
     </div>
-    <el-button type="warning">开始</el-button>
+    <el-button type="warning">查询</el-button>
+        <el-button type="warning">搜索</el-button>
+
     <table border="1px">
       <tr>
+        <td>请选择员工所在一级机构</td>
+        <td colspan="4">请选择</td>
+      </tr>
+      <tr>
+        <td>请选择员工所在二级机构</td>
+        <td colspan="4">请选择</td>
+      </tr>
+      <tr>
+        <td>请选择员工所在三级机构</td>
+        <td colspan="4">请选择</td>
+      </tr>
+      <tr>
         <td>请选择职位分类</td>
-        <td>请选择</td>
-        <td>请选择</td>
-        <td>发布时间</td>
+        <td colspan="4">请选择</td>
       </tr>
       <tr>
-        <td>请输入关键字</td>
-        <td colspan="4"><input type="text" /></td>
+        <td>请选择职位名称</td>
+        <td colspan="4">请选择</td>
       </tr>
       <tr>
-        <td>请输入登记时间</td>
+        <td>请输入建档时间</td>
         <td></td>
         <td>至</td>
         <td></td>

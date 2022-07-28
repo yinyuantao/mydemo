@@ -1,34 +1,30 @@
 <template>
   <div class="left">
+    <el-button type="warning">查询</el-button>
     <div>
       您正在做的业务是：<span>人力资源</span>--<span>人力资源档案管理</span>--<span
         >人力资源档案登记</span
       >
     </div>
-    <el-button type="warning">查询</el-button>
-
     <table border="1px">
       <tr>
-        <td>请选择员工所在一级机构</td>
-        <td></td>
-        <td>请选择员工所在的二级机构</td>
-        <td></td>
-        <td>请选择员工所在的三级机构</td>
-        <td></td>
+        <td>属性种类</td>
+        <td>属性名称</td>
+        <td>删除</td>
       </tr>
-      <tr>
-        <td>请输入建档时间</td>
-        <td></td>
-        <td>至</td>
-        <td></td>
+            <tr>
+        <td>国籍</td>
+        <td>中国</td>
+        <td>删除</td>
       </tr>
+      
     </table>
   </div>
 </template>
 
 <script>
 export default {
-  name: "interviewRegistration",
+  name: "transferRegistration",
 };
 </script>
 

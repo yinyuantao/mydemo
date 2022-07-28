@@ -30,6 +30,19 @@ import salaryChange from '@/views/payrollManagement/salaryChange'
 import salaryGiving from '@/views/payrollManagement/salaryGiving'
 import payrollEnquiry from '@/views/payrollManagement/payrollEnquiry'
 import payrollReview from '@/views/payrollManagement/payrollReview'
+//调动管理
+import transferQuery from '@/views/transferManagement/transferQuery'
+import transferRegistration from '@/views/transferManagement/transferRegistration'
+import transferReview from '@/views/transferManagement/transferReview'
+//人力资源档案管理设置
+import jobClassification from '@/views/customizedSettings/fileSettings/jobClassification'
+import jobSettings from '@/views/customizedSettings/fileSettings/jobSettings'
+import oneInstitution from '@/views/customizedSettings/fileSettings/oneInstitution'
+import publicProperty from '@/views/customizedSettings/fileSettings/publicProperty'
+import threeInstitution from '@/views/customizedSettings/fileSettings/threeInstitution'
+import titleSetting from '@/views/customizedSettings/fileSettings/titleSetting'
+import twoInstitution from '@/views/customizedSettings/fileSettings/twoInstitution'
+
 Vue.use(Router)
 
 export default new Router({
@@ -167,6 +180,56 @@ export default new Router({
           path: '/payrollReview',
           name: 'payrollReview',
           component: payrollReview,
+        },
+        { 
+          path: '/transferQuery',
+          name: 'transferQuery',
+          component: transferQuery,
+        },
+        { 
+          path: '/transferRegistration',
+          name: 'transferRegistration',
+          component: transferRegistration,
+        },
+        { 
+          path: '/transferReview',
+          name: 'transferReview',
+          component: transferReview,
+        },
+        { 
+          path: '/jobClassification',
+          name: 'jobClassification',
+          component: jobClassification,
+        },
+        { 
+          path: '/jobSettings',
+          name: 'jobSettings',
+          component: jobSettings,
+        },
+        { 
+          path: '/oneInstitution',
+          name: 'oneInstitution',
+          component: oneInstitution,
+        },
+        { 
+          path: '/publicProperty',
+          name: 'publicProperty',
+          component: publicProperty,
+        },
+        { 
+          path: '/threeInstitution',
+          name: 'threeInstitution',
+          component: threeInstitution,
+        },
+        { 
+          path: '/titleSetting',
+          name: 'titleSetting',
+          component: titleSetting,
+        },
+        { 
+          path: '/twoInstitution',
+          name: 'twoInstitution',
+          component: twoInstitution,
         }
     ]
     }

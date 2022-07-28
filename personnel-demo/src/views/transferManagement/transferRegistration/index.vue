@@ -1,6 +1,6 @@
 <template>
   <div class="left">
-        <el-button type="warning">查询</el-button>
+    <el-button type="warning">查询</el-button>
     <div>
       您正在做的业务是：<span>人力资源</span>--<span>人力资源档案管理</span>--<span
         >人力资源档案登记</span
@@ -8,27 +8,29 @@
     </div>
     <table border="1px">
       <tr>
-        <td>薪酬标准编号</td>
-        <td colspan="3"></td>
-      </tr>
-      <tr>
-        <td>请输入关键字</td>
-        <td colspan="3"></td>
+        <td>一级机构</td>
+        <td>二级机构</td>
+        <td>三级机构</td>
+        <td>薪酬标准</td>
+        <td>名字</td>
+        <td>审核</td>
       </tr>
             <tr>
-        <td>请输入建档时间</td>
-        <td></td>
-        <td>至</td>
-        <td></td>
+        <td>集团</td>
+        <td>湖南小区</td>
+        <td>哈哈</td>
+        <td>经理级别</td>
+        <td>涛涛</td>
+        <td>审核</td>
       </tr>
+      
     </table>
   </div>
 </template>
 
 <script>
 export default {
-  name: "interviewRegistration",
- 
+  name: "transferRegistration",
 };
 </script>
 

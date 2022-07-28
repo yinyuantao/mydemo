@@ -237,7 +237,7 @@ export default {
   },
   methods: {
     handleNodeClick(data) {
-      console.log(data);
+ this.$router.push('/payrollEnquiry');
     },
   },
 };

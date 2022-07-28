@@ -42,7 +42,10 @@ import publicProperty from '@/views/customizedSettings/fileSettings/publicProper
 import threeInstitution from '@/views/customizedSettings/fileSettings/threeInstitution'
 import titleSetting from '@/views/customizedSettings/fileSettings/titleSetting'
 import twoInstitution from '@/views/customizedSettings/fileSettings/twoInstitution'
-
+import payrollSettings from '@/views/customizedSettings/payrollSettings'
+//权限管理
+import userManagement from '@/views/authorityManagement/userManagement'
+import roleManagement from '@/views/authorityManagement/roleManagement'
 Vue.use(Router)
 
 export default new Router({
@@ -230,6 +233,21 @@ export default new Router({
           path: '/twoInstitution',
           name: 'twoInstitution',
           component: twoInstitution,
+        },
+        { 
+          path: '/payrollSettings',
+          name: 'payrollSettings',
+          component: payrollSettings,
+        },
+        { 
+          path: '/roleManagement',
+          name: 'roleManagement',
+          component: roleManagement,
+        },
+        { 
+          path: '/userManagement',
+          name: 'userManagement',
+          component: userManagement,
         }
     ]
     }

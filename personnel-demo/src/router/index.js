@@ -46,6 +46,8 @@ import payrollSettings from '@/views/customizedSettings/payrollSettings'
 //权限管理
 import userManagement from '@/views/authorityManagement/userManagement'
 import roleManagement from '@/views/authorityManagement/roleManagement'
+//登陆
+import login from '@/views/login'
 Vue.use(Router)
 
 export default new Router({
@@ -250,6 +252,11 @@ export default new Router({
           component: userManagement,
         }
     ]
+    },
+    { 
+      path: '/login',
+      name: 'login',
+      component: login,
     }
   ]
   

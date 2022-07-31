@@ -5,12 +5,14 @@
     <parent>
         <artifactId>hrdemo</artifactId>
         <groupId>com.example</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>service</artifactId>
+    <version>1.0</version>
     <packaging>pom</packaging>
+    
     <modules>
         <module>service-hr</module>
     </modules>
@@ -19,7 +21,7 @@
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>hrdemo</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0</version>
         </dependency>
 
         <dependency>

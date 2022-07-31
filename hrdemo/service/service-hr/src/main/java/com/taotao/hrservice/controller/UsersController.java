@@ -24,13 +24,8 @@ public class UsersController {
 
     @PostMapping("/login")
     public R loginUser (@RequestBody Users user){
-        Boolean flag = usersService.findUserById(user);
-        if (flag == true){
-            return R.ok().message("登陆成功");
-
-        }else {
-            return R.error().message("账号密码或错误");
-        }
+      Users users =usersService.login(user);
+      return R.ok().message("登陆成功");
     }
 
 

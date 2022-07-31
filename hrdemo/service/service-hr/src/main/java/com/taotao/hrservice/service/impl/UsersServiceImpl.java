@@ -22,22 +22,21 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
 
 
     @Override
-    public Boolean findUserById(Users user) {
+    public Users login(Users user) {
         String username = user.getUName();
         String password = user.getUPassword();
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)){
-            throw  new GuliException(20001,"登陆失败没有账号或密码");
-        }
-        QueryWrapper<Users> wrapper = new QueryWrapper<>();
-        wrapper.eq("username",username);
-        Users uname = baseMapper.selectOne(wrapper);
-
-        if (uname == null) {//没有这个手机号
             throw new GuliException(20001,"登陆失败");
         }
-        if (!password.equals(uname.getUPassword())){
-            throw new GuliException(20001,"密码不正确");
+        QueryWrapper<Users> wrapper = new QueryWrapper<>();
+        wrapper.eq("uName",username);
+        Users thisUser = baseMapper.selectOne(wrapper);
+        if (thisUser == null){
+            throw new GuliException(20001,"登陆失败");
         }
-        return true;
+        if (!username.equals(thisUser.getUName())){
+            throw new GuliException(20001,"登陆失败");
+        }
+        return thisUser;
     }
 }

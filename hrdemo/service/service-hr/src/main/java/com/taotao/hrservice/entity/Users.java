@@ -1,6 +1,7 @@
 package com.taotao.hrservice.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
@@ -30,15 +31,19 @@ public class Users implements Serializable {
     private Integer id;
 
     @ApiModelProperty(value = "用户编号")
+    @TableField("u_id")
     private Integer uId;
 
     @ApiModelProperty(value = "名称")
+    @TableField("u_name")
     private String uName;
 
     @ApiModelProperty(value = "真实姓名")
+    @TableField("u_true_name")
     private String uTrueName;
 
     @ApiModelProperty(value = "用户密码")
+    @TableField("u_password")
     private String uPassword;
 
 

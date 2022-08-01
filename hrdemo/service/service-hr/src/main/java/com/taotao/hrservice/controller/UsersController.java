@@ -22,10 +22,16 @@ import org.springframework.web.bind.annotation.*;
 public class UsersController {
     @Autowired UsersService usersService;
 
-    @PostMapping("/login")
-    public R loginUser (@RequestBody Users user){
-      Users users =usersService.login(user);
-      return R.ok().message("登陆成功");
+    @PostMapping(value = "/login",produces = "application/json;charset=UTF-8")
+    public R loginUser (@RequestBody Users users){
+
+        Users result = usersService.login(users);
+        System.out.println("this" + result);
+      if (result != null){
+          return R.ok().message("登陆成功");
+      }else {
+          return R.ok().message("登陆失败");
+      }
     }
 
 

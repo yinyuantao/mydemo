@@ -22,21 +22,30 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
 
 
     @Override
-    public Users login(Users user) {
-        String username = user.getUName();
-        String password = user.getUPassword();
-        if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)){
-            throw new GuliException(20001,"登陆失败");
+    public Users login(Users users) {
+        System.out.println(users);
+        String username = users.getUName();
+        String password = users.getUPassword();
+        if(StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
+            throw new GuliException(20001,"登录失败");
         }
+        System.out.println(username);
+        System.out.println(password);
         QueryWrapper<Users> wrapper = new QueryWrapper<>();
-        wrapper.eq("uName",username);
-        Users thisUser = baseMapper.selectOne(wrapper);
-        if (thisUser == null){
-            throw new GuliException(20001,"登陆失败");
+        wrapper.eq("u_name",username);
+        Users one = baseMapper.selectOne(wrapper);
+        System.out.println(one);
+        if (one == null){
+            throw new GuliException(20001,"登录失败");
         }
-        if (!username.equals(thisUser.getUName())){
-            throw new GuliException(20001,"登陆失败");
+        System.out.println("haha"+password);
+        System.out.println("xixi"+one.getUPassword());
+        if (password.equals(one.getUPassword())){
+            return one;
+        }else {
+           throw new GuliException(20001,"登录失败");
         }
-        return thisUser;
+
+
     }
 }

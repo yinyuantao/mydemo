@@ -14,5 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface UsersService extends IService<Users> {
 
 
-    Users login(Users user);
+    Users login(Users users);
 }

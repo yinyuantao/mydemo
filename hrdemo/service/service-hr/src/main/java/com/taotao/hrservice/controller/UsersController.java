@@ -23,10 +23,8 @@ public class UsersController {
     @Autowired UsersService usersService;
 
     @PostMapping(value = "/login",produces = "application/json;charset=UTF-8")
-    public R loginUser (@RequestBody Users users){
-
-        Users result = usersService.login(users);
-        System.out.println("this" + result);
+    public R loginUser (@RequestParam String name, @RequestParam String pwd){
+        Users result = usersService.login(name,pwd);
       if (result != null){
           return R.ok().message("登陆成功");
       }else {

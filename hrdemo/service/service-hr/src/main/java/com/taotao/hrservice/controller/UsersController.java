@@ -18,15 +18,16 @@ import org.springframework.web.bind.annotation.*;
  * @since 2022-07-31
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/hr")
+@CrossOrigin
 public class UsersController {
     @Autowired UsersService usersService;
 
-    @PostMapping(value = "/login",produces = "application/json;charset=UTF-8")
+    @PostMapping("/login")
     public R loginUser (@RequestParam String name, @RequestParam String pwd){
         Users result = usersService.login(name,pwd);
       if (result != null){
-          return R.ok().message("登陆成功");
+          return R.ok().data("username",name).data("password",pwd).message("登陆成功");
       }else {
           return R.ok().message("登陆失败");
       }

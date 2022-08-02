@@ -14,9 +14,9 @@
         <div class="form-container sign-in-container">
             <div class="form">
                 <h2>人事管理系统</h2>
-                <input type="email" name="emal" id="email" placeholder="输入您的账号">
-                <input type="password" name="password" id="password" placeholder="请输入您的密码">
-                <button class="signIn">登陆</button>
+                <input type="text" name="text" id="text" placeholder="输入您的账号" v-model="loginForm.username">
+                <input type="password" name="password" id="password" placeholder="请输入您的密码"  v-model="loginForm.password" >
+                <button class="signIn" v-on="sublogin">登陆</button>
             </div>
         </div>
         <!-- overlay container -->
@@ -41,7 +41,17 @@
 </template>
 
 <script>
+import loginApi from '@/api/login'
 export default {
+    name:"Login",
+    data(){ 
+        return{ 
+            loginForm:{ 
+                username:'',
+                password:''
+            },
+        }
+    },
     
 }
 </script>

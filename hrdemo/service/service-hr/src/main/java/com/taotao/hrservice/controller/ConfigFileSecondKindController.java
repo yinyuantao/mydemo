@@ -18,7 +18,7 @@ import java.util.List;
  * @since 2022-08-03
  */
 @RestController
-@RequestMapping("/hrservice/second-kind")
+@RequestMapping("/hrservice/secondKind")
 public class ConfigFileSecondKindController {
     @Autowired
     ConfigFileSecondKindService secondKindService;

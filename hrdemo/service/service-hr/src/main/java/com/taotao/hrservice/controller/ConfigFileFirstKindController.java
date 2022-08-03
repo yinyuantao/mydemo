@@ -45,8 +45,18 @@ public class ConfigFileFirstKindController {
 
     //删除机构
     @GetMapping("/deleteFirstKind/{id}")
-    public R removeFirstKind(@PathVariable String id){
+    public R removeFirstKind(@PathVariable Integer id){
         boolean flag = kindService.removeById(id);
+        if (flag){
+            return R.ok();
+        }else {
+            return R.error();
+        }
+    }
+    //增加机构
+    @PostMapping("/addFirstKind")
+    public R addFirstKind(@RequestBody ConfigFileFirstKind firstKind){
+        boolean flag = kindService.save(firstKind);
         if (flag){
             return R.ok();
         }else {

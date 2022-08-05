@@ -13,6 +13,8 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
         //属性名称，不是字段名称
         this.setFieldValByName("gmtCreate", new Date(), metaObject);
         this.setFieldValByName("gmtModified", new Date(), metaObject);
+        this.setFieldValByName("deleteFlag",0,metaObject);
+        this.setFieldValByName("isDelete",0,metaObject);
     }
 
     @Override

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        font-size: 13pt;
+      }
+
+      .Box {
+        height: 360px;
+        width: 500px;
+
+      }
+      .libox {
+        list-style: none;
+      }
+      .pingpu {
+        list-style: none;
+        display: block;
+        width: 100px;
+        height: 50px;
+        float: left;
+        text-align: center;
+        margin-top: 15px;
+      }
+      .box2 {
+        width: 400px;
+        height: 145px;
+        margin: auto;
+      }
+      .box3 {
+        width: 400px;
+        height: 140px;
+        margin: auto;
+        position: relative;
+        border-bottom: 1px solid rgb(228, 226, 226);
+      }
+      .Box > span {
+        margin-left: 50px;
+        margin-bottom: 10px;
+        display: block;
+        font-size: 20px;
+        padding-top: 10px;
+      }
+      .one {
+        display: inline;
+      }
+      .shuju ul li span { 
+        color:black;
+        font-weight: 600;
+      }
+      .shuju ul li {
+        list-style: none;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+      .shuju ul li:nth-child(1) {
+        padding-top: 10px;
+        color: rgb(122, 122, 122);
+        display: block;
+        width: 140px;
+        height: 25px;
+      }
+      .shuju ul li:nth-child(2) {
+        font-size: 30px;
+        font-weight: 900;
+      }
+      .shuju ul li:nth-child(3) {
+        color: rgb(122, 122, 122);
+        display: block;
+        width: 140px;
+        height: 25px;
+        float: left;
+      }
+      .shuju ul li:nth-child(4) {
+        color: rgb(122, 122, 122);
+        display: block;
+        width: 140px;
+        height: 25px;
+        float: left;
+      }
+      .yuanquan {
+        width: 100px;
+        height: 100px;
+        border: 1px solid blue;
+        border-radius: 50%;
+        float: right;
+        position: absolute;
+        top: 50%;
+        left: 87%;
+        transform: translate(-50%, -50%);
+      }
+      .box4 { 
+        width: 470px;
+        height: 300px;
+        background-color: #fff;
+        box-shadow:5px 5px 10px rgb(189, 189, 189);
+        margin: auto;
+      }
+      .pingpu li:nth-child(1) { 
+        color: black;
+        font-size: 20px;
+      }
+      .pingpu li:nth-child(2) { 
+        color: rgb(122, 122, 122);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="Box">
+      <span>营收情况 2022-02-28</span>
+      <div class="box4">
+      <div class="box3">
+        <div class="date"></div>
+        <div class="shuju">
+          <div class="yuanquan"></div>
+          <ul>
+            <li>本日营收</li>
+            <li>31087.40</li>
+            <li>房费:<span>23315.55</span></li>
+            <li>其他:<span>7771.85</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="box2">
+        <ul class="libox">
+          <li>
+            <ul class="pingpu">
+              <li>88</li>
+              <li>过夜间数</li>
+            </ul>
+          </li>
+          <li>
+            <ul class="pingpu">
+              <li>5</li>
+              <li>钟点房</li>
+            </ul>
+          </li>
+          <li>
+            <ul class="pingpu">
+              <li>2</li>
+              <li>免费房</li>
+            </ul>
+          </li>
+          <li>
+            <ul class="pingpu">
+              <li>90</li>
+              <li>综合间夜数</li>
+            </ul>
+          </li>
+          <li>
+            <ul class="pingpu">
+              <li>120.52</li>
+              <li>营收Revpar</li>
+            </ul>
+          </li>
+          <li>
+            <ul class="pingpu">
+              <li>118.88</li>
+              <li>房费Revpar</li>
+            </ul>
+          </li>
+          <li>
+            <ul class="pingpu">
+              <li>123.45</li>
+              <li>平均房价</li>
+            </ul>
+          </li>
+          <li>
+            <ul class="pingpu">
+              <li>90%</li>
+              <li>综合出租率</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

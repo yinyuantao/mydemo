@@ -63,57 +63,57 @@ export default new Router({
       children:[
         { 
           path: '/fileRegistration',
-          name: 'fileRegistration',
+          name: '人力资源档案等级',
           component: fileRegistration,
         },
         { 
           path: '/change',
-          name: 'change',
+          name: '职位发布登记',
           component: change,
         },
         { 
           path: '/register',
-          name: 'register',
+          name: '职位发布变更',
           component: register,
         },
         { 
           path: '/release',
-          name: 'release',
+          name: '职位发布查询',
           component: release,
         },
         { 
           path: '/ResumeRegistration',
-          name: 'ResumeRegistration',
+          name: '简历登记',
           component: ResumeRegistration,
         },
         { 
           path: '/ResumeScreening',
-          name: 'ResumeScreening',
+          name: '简历筛选',
           component: ResumeScreening,
         },
         { 
           path: '/ResumeQuery',
-          name: 'ResumeQuery',
+          name: '有效简历查询',
           component: ResumeQuery,
         },
         { 
           path: '/interviewRegistration',
-          name: 'interviewRegistration',
+          name: '面试结果登记',
           component: interviewRegistration,
         },
         { 
           path: '/interviewScreening',
-          name: 'interviewScreening',
+          name: '面试结果筛选',
           component: interviewScreening,
         },
         { 
           path: '/admissionApproval',
-          name: 'admissionApproval',
+          name: '录用申请',
           component: admissionApproval,
         },
         { 
           path: '/hiringApplication',
-          name: 'hiringApplication',
+          name: '录用审批',
           component: hiringApplication,
         },
         { 
@@ -123,22 +123,22 @@ export default new Router({
         },
         { 
           path: '/fileReview',
-          name: 'fileReview',
+          name: '人力资源档案复核',
           component: fileReview,
         },
         { 
           path: '/fileQuery',
-          name: 'fileQuery',
+          name: '人力资源档案查询',
           component: fileQuery,
         },
         { 
           path: '/fileChange',
-          name: 'fileChange',
+          name: '人力资源档案变更',
           component: fileChange,
         },
         { 
           path: '/fileDeletion',
-          name: 'fileDeletion',
+          name: '人力资源档案删除',
           component: fileDeletion,
         },
         { 
@@ -148,12 +148,12 @@ export default new Router({
         },
         { 
           path: '/deletePermanently',
-          name: 'deletePermanently',
+          name: '人力资源档案永久删除',
           component: deletePermanently,
         },
         { 
           path: '/payGrade',
-          name: 'payGrade',
+          name: '薪酬标准登记',
           component: payGrade,
         },
         { 
@@ -173,7 +173,7 @@ export default new Router({
         },
         { 
           path: '/salaryGiving',
-          name: 'salaryGiving',
+          name: '薪酬发放登记',
           component: salaryGiving,
         },
         { 
@@ -188,37 +188,37 @@ export default new Router({
         },
         { 
           path: '/transferQuery',
-          name: 'transferQuery',
+          name: '调动管理',
           component: transferQuery,
         },
         { 
           path: '/transferRegistration',
-          name: 'transferRegistration',
+          name: '调动审核',
           component: transferRegistration,
         },
         { 
           path: '/transferReview',
-          name: 'transferReview',
+          name: '调动查询',
           component: transferReview,
         },
         { 
           path: '/jobClassification',
-          name: 'jobClassification',
+          name: '职位分类设置',
           component: jobClassification,
         },
         { 
           path: '/jobSettings',
-          name: 'jobSettings',
+          name: '职位设置',
           component: jobSettings,
         },
-        { 
+        { //一级机构设置
           path: '/oneInstitution',
-          name: 'oneInstitution',
+          name: '一级机构设置',
           component: oneInstitution,
         },
         { 
           path: '/publicProperty',
-          name: 'publicProperty',
+          name: '公共属性设置',
           component: publicProperty,
         },
         { 
@@ -228,34 +228,34 @@ export default new Router({
         },
         { 
           path: '/titleSetting',
-          name: 'titleSetting',
+          name: '职称设置',
           component: titleSetting,
         },
         { 
           path: '/twoInstitution',
-          name: 'twoInstitution',
+          name: '二级机构设置',
           component: twoInstitution,
         },
         { 
           path: '/payrollSettings',
-          name: 'payrollSettings',
+          name: '项目薪酬设置',
           component: payrollSettings,
         },
         { 
           path: '/roleManagement',
-          name: 'roleManagement',
+          name: '角色管理',
           component: roleManagement,
         },
         { 
           path: '/userManagement',
-          name: 'userManagement',
+          name: '用户管理',
           component: userManagement,
         }
     ]
     },
     { 
       path: '/login',
-      name: 'login',
+      name: '登录',
       component: login,
     }
   ]

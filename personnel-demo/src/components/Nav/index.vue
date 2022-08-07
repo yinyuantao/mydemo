@@ -6,6 +6,8 @@
     @node-click="handleNodeClick"
     class="navigation"
   ></el-tree>
+
+
   <router-view ></router-view>
 </div>
 
@@ -24,12 +26,16 @@ export default {
               children: [
                 {
                   label: "职位发布登记",
+                  path:"/change",
+                  
                 },
                 {
                   label: "职位发布变更",
+                  path:"/register"
                 },
                 {
                   label: "职位发布查询",
+                        path: '/release',
                 },
               ],
             },
@@ -38,12 +44,15 @@ export default {
               children: [
                 {
                   label: "简历登记",
+                  path: '/ResumeRegistration',
                 },
                 {
                   label: "简历筛选",
+                          path: '/ResumeScreening',
                 },
                 {
                   label: "有效简历查询",
+                          path: '/ResumeQuery'
                 },
               ],
             },
@@ -52,9 +61,11 @@ export default {
               children: [
                 {
                   label: "面试结果登记",
+                    path: '/interviewRegistration',
                 },
                 {
                   label: "面试筛选",
+                         path: '/interviewScreening',
                 },
               ],
             },
@@ -63,12 +74,15 @@ export default {
               children: [
                 {
                   label: "录用申请",
+                           path: '/admissionApproval',
                 },
                 {
                   label: "录用审批",
+                            path: '/hiringApplication',
                 },
                 {
                   label: "录用查询",
+                            path: '/employmentInquiry',
                 },
               ],
             },
@@ -83,24 +97,30 @@ export default {
             },
                         {
               label: "人力资源档案登记复核",
+                      path: '/fileReview',
             },
                         {
               label: "人力资源档案查询",
+                        path: '/fileQuery',
             },
                         {
               label: "人力资源档案变更",
+                        path: '/fileChange',
             },
             {
               label: "人力资源档案删除管理",
               children: [
                 {
                   label: "人力资源档案删除",
+                            path: '/fileChange',
                 },
                 {
                   label: "档案删除恢复",
+                       name: '人力资源档案删除',
                 },
                 {
                   label: "人力资源档案永久删除",
+                       path: '/deletePermanently',
                 },
               ],
             },
@@ -111,15 +131,19 @@ export default {
           children: [
             {
               label: "薪酬标准登记",
+                       path: '/payGrade',
             },
                         {
               label: "薪酬标准登记复核",
+                      path: '/salaryReview',
             },
                         {
               label: "薪酬标准查询",
+                      path: '/salaryChange',
             },
                         {
               label: "薪酬标准变更",
+                        path: '/salaryInquiry',
             },
           ],
         },  
@@ -128,15 +152,17 @@ export default {
           children: [
             {
               label: "薪酬发放登记",
+                        path: '/salaryGiving',
              
             },
                         {
               label: "薪酬发放登记复核",
+                        path: '/payrollEnquiry',
              
             },
                                     {
               label: "薪酬发放查询",
-             
+                       path: '/payrollReview',
             },
           ],
         },  
@@ -145,12 +171,15 @@ export default {
           children: [
             {
               label: "调动登记",
+                        path: '/transferQuery',
             },
                         {
               label: "调动审核",
+                    path: '/transferRegistration',
             },
                         {
               label: "调动查询",
+                        path: '/transferReview',
             },
           ],
         },  
@@ -162,21 +191,30 @@ export default {
               children: [
                 {
                   label: "一级机构设置",
+                      path: '/oneInstitution',
                 },
                 {
                   label: "二级机构设置",
+                       path: '/twoInstitution',
                 },
                 {
                   label: "三级机构设置",
+                       path: '/threeInstitution',
+                },                                {
+                  label: "职称设置",
+                             path: '/titleSetting',
                 },
                                 {
-                  label: "职称设置",
+                  label: "职位设置",
+                         path: '/jobSettings',
                 },
                                 {
                   label: "职称分类设置",
+                        path: '/jobClassification',
                 },
                                 {
                   label: "公共属性设置",
+                            path: '/publicProperty',
                 },
 
               ],
@@ -186,6 +224,7 @@ export default {
               children: [
                 {
                   label: "薪酬项目设置",
+                      path: '/payrollSettings',
                 },
                 {
                   label: "薪酬发放方法设置",
@@ -222,9 +261,11 @@ export default {
           children: [
             {
               label: "用户管理",
+                 path: '/userManagement',
             },
                         {
               label: "角色管理",
+                        path: '/roleManagement',
             },
           ],
         },   
@@ -237,7 +278,7 @@ export default {
   },
   methods: {
     handleNodeClick(data) {
- this.$router.push('/payrollEnquiry');
+    this.$router.push(data.path);
     },
   },
 };

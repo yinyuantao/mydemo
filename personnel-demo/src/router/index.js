@@ -48,6 +48,8 @@ import userManagement from '@/views/authorityManagement/userManagement'
 import roleManagement from '@/views/authorityManagement/roleManagement'
 //登陆
 import login from '@/views/login'
+//面包屑导航
+import breadcrumb from "@/components/Breadcrumb"
 Vue.use(Router)
 
 export default new Router({
@@ -257,6 +259,12 @@ export default new Router({
       path: '/login',
       name: '登录',
       component: login,
+    }
+    ,
+    { 
+      path: '/breadcrumb',
+      name: '面包屑',
+      component: breadcrumb,
     }
   ]
   

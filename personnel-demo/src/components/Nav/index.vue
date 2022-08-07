@@ -6,8 +6,7 @@
       @node-click="handleNodeClick"
       class="navigation"
     ></el-tree>
-
-    <router-view></router-view>
+    <router-view> </router-view>
   </div>
 </template>
 

@@ -1,11 +1,6 @@
 <template>
   <div class="left">
     <el-button type="warning">查询</el-button>
-    <div>
-      您正在做的业务是：<span>人力资源</span>--<span>人力资源档案管理</span>--<span
-        >人力资源档案登记</span
-      >
-    </div>
     <table border="1px">
       <tr>
         <td>角色编号</td>

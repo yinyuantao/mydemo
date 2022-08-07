@@ -1,10 +1,6 @@
 <template>
   <div class="left">
-    <div>
-      您正在做的业务是：<span>人力资源</span>--<span>人力资源档案管理</span>--<span
-        >人力资源档案登记</span
-      >
-    </div>
+
     <p>当前可变更是职位发布总数：<span>2例</span></p>
     <table border="1px">
       <tr>

@@ -11,7 +11,10 @@ Vue.config.productionTip = false
  */
  import ElementUI from 'element-ui'
  Vue.use(ElementUI)
-Vue.prototype.$axios = axios
+ 
+Vue.prototype.$axios = axios;
+
+axios.defaults.baseURL = '/api'
 /* eslint-disable no-new */
 new Vue({
   router,//注册路由

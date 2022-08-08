@@ -19,13 +19,14 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/hrservice/firstKind")
+@CrossOrigin
 public class ConfigFileFirstKindController {
     @Autowired
     ConfigFileFirstKindService
     kindService;
 
     //查询所有一级分类
-    @PostMapping("/first")
+    @GetMapping("/first")
     public R selectAllFirstKind(){
         List<ConfigFileFirstKind> list = kindService.selectAllList();
         return R.ok().data("first_kind_list",list);

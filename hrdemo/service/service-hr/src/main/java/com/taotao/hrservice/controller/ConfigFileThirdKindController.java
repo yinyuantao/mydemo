@@ -20,14 +20,15 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/hrservice/thirdKind")
+@CrossOrigin
 public class ConfigFileThirdKindController {
     @Autowired
     ConfigFileThirdKindService
     thirdKindService;
 
     //查询所有三级列表
-    @PostMapping("selectAllThirdKind")
-    public R selectAllThirdKind(@RequestBody ConfigFileThirdKind thirdKind){
+    @GetMapping("selectAllThirdKind")
+    public R selectAllThirdKind(){
         List<ConfigFileThirdKind> ThirdKindList = thirdKindService.list(null);
         if (ThirdKindList == null){
             return R.error();

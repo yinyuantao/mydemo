@@ -35,6 +35,8 @@
       </template>
     </el-table-column>
   </el-table>
+
+
   </div>
 </template>
 
@@ -56,16 +58,29 @@ export default {
     methods: {
       handleClick(row) {
         console.log(row);
-      }
-    },
-    created() {
-      this.$axios.get('/hrservice/firstKind/first',{ 
+        this.$axios.post('/hrservice/firstKind/updateFirstKind',{ 
+
+        }).then(res => { 
+          console.log(res.data);
+        })
+      },
+       getINfo(){ 
+      this.$axios.get('hrservice/thirdKind/selectAllThirdKind',{ 
         
-      }).then(res => { 
-        console.log(res.data);
+      }).then(function(response) { 
+        console.log(response.data);
       }),err=> { 
         console.log(err);
       }
+      }
+
+      
+    },
+    created() {
+
+
+
+      this.getINfo();
 	},
 };
 </script>

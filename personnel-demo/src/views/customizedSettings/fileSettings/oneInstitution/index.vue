@@ -35,11 +35,13 @@
       </template>
     </el-table-column>
   </el-table>
+
+  <button @click="getFn">发起一个get请求</button>
   </div>
 </template>
 
 <script>
-
+import {getFirstKindList} from '@/api/api.js'
 export default {
   name: "transferRegistration",
     data() {
@@ -56,16 +58,17 @@ export default {
     methods: {
       handleClick(row) {
         console.log(row);
-      }
+      },
+      getFn(){ 
+        getFirstKindList().then(function(res){ 
+          console.log(res);
+        })
+        
+        }
+     
     },
     created() {
-      this.$axios.get('/hrservice/firstKind/first',{ 
-        
-      }).then(res => { 
-        console.log(res.data);
-      }),err=> { 
-        console.log(err);
-      }
+
 	},
 };
 </script>

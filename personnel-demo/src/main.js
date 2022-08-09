@@ -14,7 +14,7 @@ Vue.config.productionTip = false
  
 Vue.prototype.$axios = axios;
 
-axios.defaults.baseURL = '/api'
+
 /* eslint-disable no-new */
 new Vue({
   router,//注册路由

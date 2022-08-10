@@ -45,7 +45,7 @@ public class ConfigFileFirstKindController {
     }
 
     //删除机构
-    @DeleteMapping("/deleteFirstKind/{id}")
+    @DeleteMapping ("/deleteFirstKind/{id}")
     public R removeFirstKind(@PathVariable Integer id){
         boolean flag = kindService.removeById(id);
         if (flag){

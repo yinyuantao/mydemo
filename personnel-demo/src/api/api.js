@@ -13,10 +13,10 @@ export const getFirstKindList = () => request({
 
 //点击删除一级分类数据
 export const deleteFirstKindList = (id) => request({ 
-    url:'/hrservice/firstKind/firstdeleteFirstKind/',
+    url:`/hrservice/firstKind/deleteFirstKind/${id}`,
     method:'delete',
-    params: { 
-        id
-    }
+    // params: { 
+    //     id
+    // }
 });
 

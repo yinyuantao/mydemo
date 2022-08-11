@@ -130,9 +130,9 @@ export default {
       })
     },
     removeFirstKindList(row){ 
-      // var id = row.ffkId 
-      // console.log(row.ffkId);
-      deleteFirstKindList(row.ffkId).then(function (response){ 
+      var id = row.ffkId 
+      console.log(row.ffkId);
+      deleteFirstKindList(id).then(function (response){ 
           console.log(response);
       })
     }

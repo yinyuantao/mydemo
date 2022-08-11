@@ -1,25 +1,12 @@
 module.exports = {
   // 关闭ESLINT校验工具
   lintOnSave: false,
-  //配置代理跨域
-//   devServer: {
-//     env: require('./dev.env'),
-//     open: true,//是否自动启动
-//     port: 8080,//默认端口号
-//     autoOpenBrowser: true,
-//     assetsSubDirectory: 'static',
-//     assetsPublicPath: '/',
-//     proxy: {
-//       '/api': {
-//         target: "http://localhost:8001",
-//         changOrigin: true, //允许跨域 
-//         pathRewrite:{
-//           "^/api": ''
-//         } 
-//       }
-//   },
-  
+  devServer: {
+    // open: true,
+    port: 9001,
+    proxy: {
 
+<<<<<<< HEAD
 // }
 
 // devServer: {
@@ -65,6 +52,18 @@ dev: {
 
 
 
+=======
+      // 配置跨域
+      '/api': {
+        target: "http://127.0.0.1:8001",//后端接口地址
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    },
+  }
+>>>>>>> db693aa7bbe52a9d3a119e403daf4741d77e2719
 }
 
 

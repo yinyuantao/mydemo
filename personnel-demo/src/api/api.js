@@ -17,3 +17,13 @@ export const deleteFirstKindList = (id) => request({
     method:'delete',
 });
 
+
+
+
+//添加一级分类数据
+export const addFirstKindList = (KindList) => request({ 
+    url:`/hrservice/firstKind/addFirstKind`,
+    method:'post',
+    data:KindList
+
+});

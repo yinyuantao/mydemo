@@ -1,6 +1,6 @@
 <template>
   <div class="left">
-    <el-table :data="tableData" align="left" height="250" v-if="$route.meta.oneKindShow">
+    <el-table :data="tableData" align="left" height="100%" v-if="$route.meta.oneKindShow">
       <el-table-column prop="firstKindId" label="一级机构编号" width="150">
       </el-table-column>
       <el-table-column prop="firstKindName" label="一级机构名称" width="150">
@@ -22,7 +22,7 @@
           <el-button @click="handleClick(scope.row)" type="text" size="small"
             >更改</el-button
           >
-          <el-button type="text" size="small" @click="addFirstKindList" ><router-link to="/oneInstitution/categoryform">添加</router-link></el-button>
+          <el-button type="text" size="small"><router-link to="/oneInstitution/categoryform">添加</router-link></el-button>
           <el-button
             @click="removeFirstKindList(scope.row)"
             type="text"
@@ -76,13 +76,9 @@ export default {
         console.log(response);
       });
     },
-    //添加
-    addFirstKindList(){ 
-
-    },
   },
   created() {
-
+    this.showFirstKindList();
   },
   watch: { 
       $route(to, from) {

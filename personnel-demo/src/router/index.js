@@ -43,6 +43,7 @@ import threeInstitution from '@/views/customizedSettings/fileSettings/threeInsti
 import titleSetting from '@/views/customizedSettings/fileSettings/titleSetting'
 import twoInstitution from '@/views/customizedSettings/fileSettings/twoInstitution'
 import payrollSettings from '@/views/customizedSettings/payrollSettings'
+import categoryform from '@/views/customizedSettings/fileSettings/oneInstitution/categoryform'
 //权限管理
 import userManagement from '@/views/authorityManagement/userManagement'
 import roleManagement from '@/views/authorityManagement/roleManagement'
@@ -217,6 +218,17 @@ export default new Router({
           path: '/oneInstitution',
           name: '一级机构设置',
           component: oneInstitution,
+          meta:{ 
+            oneKindShow:true,
+          },
+          children: [{ 
+            path: '/oneInstitution/categoryform',
+            name: 'fromname',
+            component: categoryform,
+            meta:{ 
+              kindShow:true,
+            }
+          }]
         },
         { 
           path: '/publicProperty',

@@ -5,27 +5,6 @@ module.exports = {
     // open: true,
     port: 9001,
     proxy: {
-
-<<<<<<< HEAD
-// }
-
-// devServer: {
-//   open: true,
-//   host: 'localhost',
-//   port: 8080,
-//   https: false,
-//   hotOnly: false,
-//   proxy: {
-//     // 配置跨域
-//     '/api': {
-//       target: 'http://127.0.0.1:8001',//后端接口地址
-//       changOrigin: true,
-//       pathRewrite: {
-//         '^/api': '/api'
-//       }
-//     }
-//   },
-// }
 dev: {
   env: require('./dev.env'),
   port: 8080,
@@ -52,18 +31,7 @@ dev: {
 
 
 
-=======
-      // 配置跨域
-      '/api': {
-        target: "http://127.0.0.1:8001",//后端接口地址
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': ''
-        }
-      }
-    },
-  }
->>>>>>> db693aa7bbe52a9d3a119e403daf4741d77e2719
+
 }
 
-
+  }}

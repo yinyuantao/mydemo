@@ -14,10 +14,6 @@ Vue.config.productionTip = false
  
 Vue.prototype.$axios = axios;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> db693aa7bbe52a9d3a119e403daf4741d77e2719
 /* eslint-disable no-new */
 new Vue({
   router,//注册路由

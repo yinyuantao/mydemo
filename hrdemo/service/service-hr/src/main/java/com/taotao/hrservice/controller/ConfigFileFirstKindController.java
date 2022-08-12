@@ -31,10 +31,15 @@ public class ConfigFileFirstKindController {
         List<ConfigFileFirstKind> first_kind_list = kindService.selectAllList();
         return R.ok().data("first_kind_list",first_kind_list);
     }
-
+    //根据id查询,用于信回显
+    @GetMapping("/getById/{id}")
+    public R getById(@PathVariable Integer id){
+        ConfigFileFirstKind list = kindService.getById(id);
+        return R.ok().data("list",list);
+    }
     //更改一级机构信息
     @PostMapping ("/updateFirstKind")
-    public R updateById(@RequestBody ConfigFileFirstKind firstKind){
+    public R updateById(@RequestBody(required = false) ConfigFileFirstKind firstKind){
         boolean flag =  kindService.updateById(firstKind);
         System.out.println(flag);
         if (flag){

@@ -27,3 +27,9 @@ export const addFirstKindList = (KindList) => request({
     data:KindList
 
 });
+
+//更改一级分类数据
+export const updateFirstKind = () => request({ 
+    url:`/hrservice/firstKind/updateFirstKind`,
+    method:'post',
+})

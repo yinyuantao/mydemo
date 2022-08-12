@@ -14,7 +14,7 @@
         <el-input v-model="KindList.firstKindSaleId"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="addKindList">提交</el-button>
+        <el-button type="primary" @click="updateKinnList">提交</el-button>
         <el-button>返回</el-button>
       </el-form-item>
     </el-form>
@@ -22,11 +22,15 @@
 </template>
 
 <script>
-import {addFirstKindList} from "@/api/api.js";
+import { addFirstKindList } from "@/api/api.js";
+import { updateFirstKind } from "@/api/api";
+
 export default {
+  inject: ['reload'],
   data() {
     return {
       KindList: {
+        ffkId: "",
         firstKindId: "",
         firstKindName: "",
         firstKindSalaryId: "",
@@ -35,15 +39,40 @@ export default {
     };
   },
   methods: {
+    //判断修改还是新增操作
+    //根据是否有id值来判断
+    saveOrUpdate() {
+      if (!this.KindList.firstKindId == null) {
+        this.addKindList();
+      } else {
+        this.updateKinnList();
+      }
+    },
+    //添加分类
     addKindList() {
-      addFirstKindList(this.KindList).then(function(response) {
-          this.$message({
-          message: "添加讲师记录成功",
+      addFirstKindList(this.KindList).then(function (response) {
+        this.$message({
+          message: "添加一级分类",
           type: "success",
         });
-        this.$router.push({ path: "/oneInstitution" });
       });
+      this.$router.push({ path: "/oneInstitution" });
+      this.reload();
     },
+
+    //更新分类
+    updateKinnList() {
+      updateFirstKind(this.KindList).then(function (response) {
+        this.$message({
+          message: "修改讲师成功",
+          type: "success",
+        });
+      })
+      // this.$router.push({ path: "/oneInstitution" });
+      // this.reload();
+    }
+
+
   },
 };
 </script>

@@ -222,7 +222,7 @@ export default new Router({
             oneKindShow:true,
           },
           children: [{ 
-            path: '/oneInstitution/categoryform',
+            path: '/oneInstitution/categoryform/:fkkid?',
             name: 'fromname',
             component: categoryform,
             meta:{ 

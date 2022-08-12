@@ -1,33 +1,108 @@
 <template>
   <div class="left">
-    <el-button type="warning">查询</el-button>
-    <table border="1px">
-      <tr>
-        <td>一级机构编号</td>
-        <td>二级机构编号</td>
-        <td>二级机构名称</td>
-        <td>薪酬发放责任人编号</td>
-        <td>销售责任人编号</td>
-        <td>变更</td>
-        <td>删除</td>
-      </tr>
-            <tr>
-        <td>集团</td>
-        <td>集团</td>
-        <td>湖南小区</td>
-        <td>哈哈</td>
-        <td>经理级别</td>
-        <td>涛涛</td>
-        <td>审核</td>
-      </tr>
-      
-    </table>
+   <el-button type="text" size="small" ><router-link to="/oneInstitution/categoryform">添加</router-link></el-button>
+
+    <el-table :data="tableData" align="left" height="100%" v-if="$route.meta.oneKindShow">
+      <el-table-column prop="firstKindId" label="一级机构编号" width="150">
+      </el-table-column>
+      <el-table-column prop="firstKindName" label="一级机构名称" width="150">
+      </el-table-column>
+      <el-table-column
+        prop="firstKindSalaryId"
+        label="薪酬发放责任人编号"
+        width="150"
+      >
+      </el-table-column>
+      <el-table-column
+        prop="firstKindSaleId"
+        label="销售责任人编号"
+        width="150"
+      >
+      </el-table-column>
+      <el-table-column fixed="right" label="操作" width="150">
+        <template slot-scope="scope">
+          <!-- <router-link :to="'/oneInstitution/categoryform/' + scope.row.firstKindSalaryId"> -->
+          <el-button @click="handleClick(scope.row)" type="text" size="small"
+            >修改</el-button
+          >
+            <!-- </router-link> -->
+          <el-button
+        
+            @click="removeFirstKindList(scope.row)"
+            type="text"
+            size="small"
+            >删除</el-button
+          >
+        </template>
+      </el-table-column>
+    </el-table>
+
+    <router-view v-if="this.$route.meta.kindShow"></router-view>
+
+  
   </div>
 </template>
 
 <script>
+import { getFirstKindList } from "@/api/api.js";
+import { deleteFirstKindList } from "@/api/api.js";
+
 export default {
   name: "transferRegistration",
+  inject:['reload'],
+  data() {
+    return {
+      tableData: [
+        {
+          ffkId: "",
+          firstKindId: "",
+          firstKindName: "",
+          firstKindSalaryId: "",
+          firstKindSaleId: "",
+        },
+      ],
+    };
+  },
+  methods: {
+    handleClick(row) {
+      var ffid = row.ffkId
+      console.log(ffid);
+      this.$router.push({ 
+        path: "/oneInstitution/categoryform" ,
+        query: { 
+          "ffkId":ffid
+        }
+        });
+    },
+
+    showFirstKindList() {
+      var that = this;
+      getFirstKindList().then(function (response) {
+        that.tableData = response.data.data.first_kind_list;
+      });
+    },
+    //删除
+    removeFirstKindList(row) {
+      var id = row.ffkId;
+      deleteFirstKindList(id).then(function (response) {
+      });
+    this.reload();
+    },
+  },
+  created() {
+    this.showFirstKindList();
+    console.log();
+  },
+  watch: { 
+      $route(to, from) {
+        let ThisPage = to.name;
+        if(ThisPage === 'fromname'){ //检测组件名字是否等于fromname 是的话显示，不是隐藏
+          this.oneKindShow = false;
+        }else{ 
+          this.oneKindShow = true;
+        }
+    }
+  }
 };
 </script>
 
@@ -37,11 +112,16 @@ export default {
   border-collapse: collapse;
   text-align: center;
 }
+
 th,
 td {
-  border: 1px solid black;
   height: 40px;
   width: 150px;
   text-align: center;
 }
+
+/deep/ .el-table .el-table__cell {
+  text-align: center;
+}
+
 </style>

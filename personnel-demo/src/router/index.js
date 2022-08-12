@@ -41,6 +41,8 @@ import oneInstitution from '@/views/customizedSettings/fileSettings/oneInstituti
 import publicProperty from '@/views/customizedSettings/fileSettings/publicProperty'
 import threeInstitution from '@/views/customizedSettings/fileSettings/threeInstitution'
 import titleSetting from '@/views/customizedSettings/fileSettings/titleSetting'
+//titleSetiting表单修改
+import jobTypeFrom from '@/views/customizedSettings/fileSettings/titleSetting/jobTypeFrom'
 import twoInstitution from '@/views/customizedSettings/fileSettings/twoInstitution'
 import payrollSettings from '@/views/customizedSettings/payrollSettings'
 import categoryform from '@/views/customizedSettings/fileSettings/oneInstitution/categoryform'
@@ -244,6 +246,17 @@ export default new Router({
           path: '/titleSetting',
           name: '职称设置',
           component: titleSetting,
+          meta:{ 
+            oneKindShow:true,
+          },
+          children: [{ 
+            path: '/titleSetting/jobTypeFrom/:fkkid?',
+            name: 'jobTypeFrom',
+            component: jobTypeFrom,
+            meta:{ 
+              kindShow:true,
+            }
+          }]
         },
         { 
           path: '/twoInstitution',

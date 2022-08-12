@@ -40,3 +40,26 @@ export const getInfoById = (id) => request({
     url:`/hrservice/firstKind/getById/${id}`,
     method:'get',
 })
+
+//查询所有职称
+export const selectAllJobType = () => request({ 
+    url:'/hrservice/jobType/selectAllJobType',
+    method:'get'
+});
+
+//删除所有职称
+export const removeJobType = (id) => request({ 
+    url:`/hrservice/jobType/removeJobType/${id}`,
+    method:'delete'
+});
+//根据id查询职称
+export const getJobById = (id) => request({ 
+    url:`/hrservice/jobType/getJobById/${id}`,
+    method:'get',
+})
+//根据id修改职称
+export const updateJobList = (JobTitleData) => request({ 
+    url:`/hrservice/firstKind/updateFirstKind`,
+    method:'post',
+    data:JobTitleData
+})

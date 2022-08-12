@@ -52,7 +52,7 @@ export default {
     //添加分类
     addKindList() {
       addFirstKindList(this.KindList).then(function (response) {
-
+          
       });
       this.$router.push({ path: "/oneInstitution" });
       this.reload();
@@ -77,10 +77,12 @@ export default {
       }
     },
 
+
+
     //根据id查询,数据回显
-    getInfo(id){ 
+    getInfo(id) {
       var thar = this;
-      getInfoById(id).then(function(response){ 
+      getInfoById(id).then(function (response) {
         thar.KindList = response.data.data.list
       })
     }

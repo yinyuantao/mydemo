@@ -2,6 +2,7 @@ package com.taotao.hrservice.controller;
 
 
 import com.taotao.commonutils.R;
+import com.taotao.hrservice.entity.ConfigFileFirstKind;
 import com.taotao.hrservice.entity.JobType;
 import com.taotao.hrservice.service.JobTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +20,13 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/hrservice/jobType")
+//职位设置
 public class JobTypeController {
     @Autowired
     JobTypeService jobTypeService;
 
     //查询所有分类
-    @PostMapping("/selectAllJobType")
+    @GetMapping("/selectAllJobType")
     public R selectAllJobType(){
         List<JobType> JobList = jobTypeService.list(null);
         if (JobList == null){
@@ -43,14 +45,20 @@ public class JobTypeController {
         }
     }
     //删除职位
-    @GetMapping("/removeJobType")
-    public R removeJobType(@RequestParam Integer id){
+    @DeleteMapping("/removeJobType/{id}")
+    public R removeJobType(@PathVariable Integer id){
         boolean flag = jobTypeService.removeById(id);
         if (flag){
             return R.ok();
         }else {
             return R.error();
         }
+    }
+    //根据id查询
+    @GetMapping("/getJobById/{id}")
+    public R getJobById(@PathVariable Integer id){
+        JobType list = jobTypeService.getById(id);
+        return R.ok().data("list",list);
     }
 }
 

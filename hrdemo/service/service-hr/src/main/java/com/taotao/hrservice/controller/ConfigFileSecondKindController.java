@@ -47,7 +47,7 @@ public class ConfigFileSecondKindController {
 
     //删除二级机构
     @DeleteMapping("/removeSecondKind/{id}")
-    public R removeSecondKind(@RequestParam Integer id){
+    public R removeSecondKind(@PathVariable Integer id){
         boolean flag = secondKindService.removeById(id);
         if (flag){
             return R.ok();

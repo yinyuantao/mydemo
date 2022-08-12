@@ -14,7 +14,7 @@
         <el-input v-model="KindList.firstKindSaleId"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="updateKinnList">提交</el-button>
+        <el-button type="primary" @click="saveOrUpdate">提交</el-button>
         <el-button>返回</el-button>
       </el-form-item>
     </el-form>
@@ -24,6 +24,7 @@
 <script>
 import { addFirstKindList } from "@/api/api.js";
 import { updateFirstKind } from "@/api/api";
+import { getInfoById } from "@/api/api";
 
 export default {
   inject: ['reload'],
@@ -42,38 +43,53 @@ export default {
     //判断修改还是新增操作
     //根据是否有id值来判断
     saveOrUpdate() {
-      if (!this.KindList.firstKindId == null) {
+      if (!this.KindList.ffkId) {
         this.addKindList();
       } else {
-        this.updateKinnList();
+        this.updateKinList();
       }
     },
     //添加分类
     addKindList() {
       addFirstKindList(this.KindList).then(function (response) {
-        this.$message({
-          message: "添加一级分类",
-          type: "success",
-        });
+
       });
       this.$router.push({ path: "/oneInstitution" });
       this.reload();
     },
 
     //更新分类
-    updateKinnList() {
+    updateKinList() {
       updateFirstKind(this.KindList).then(function (response) {
-        this.$message({
-          message: "修改讲师成功",
-          type: "success",
-        });
+
       })
-      // this.$router.push({ path: "/oneInstitution" });
-      // this.reload();
+      this.$router.push({ path: "/oneInstitution" });
+      this.reload();
+    },
+
+    //判断路径中是否有id值
+    init() {
+      if (this.$route.query && this.$route.query.ffkId) {
+        const id = this.$route.query.ffkId;
+        this.getInfo(id);
+      } else {
+        this.KindList = {};
+      }
+    },
+
+    //根据id查询,数据回显
+    getInfo(id){ 
+      var thar = this;
+      getInfoById(id).then(function(response){ 
+        thar.KindList = response.data.data.list
+      })
     }
 
-
   },
+  created() {
+    // 页面渲染之前
+    this.init();
+  }
 };
 </script>
 

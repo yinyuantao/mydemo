@@ -29,7 +29,14 @@ export const addFirstKindList = (KindList) => request({
 });
 
 //更改一级分类数据
-export const updateFirstKind = () => request({ 
+export const updateFirstKind = (KindList) => request({ 
     url:`/hrservice/firstKind/updateFirstKind`,
     method:'post',
+    data:KindList
+})
+
+//根据id查询
+export const getInfoById = (id) => request({ 
+    url:`/hrservice/firstKind/getById/${id}`,
+    method:'get',
 })

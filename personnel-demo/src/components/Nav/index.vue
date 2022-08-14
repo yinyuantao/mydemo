@@ -184,27 +184,15 @@ export default {
               label: "人力资源档案管理设置",
               children: [
                 {
-                  label: "一级机构设置",
+                  label: "机构设置",
                   path: "/oneInstitution"
                 },
                 {
-                  label: "二级机构设置",
-                  path: "/twoInstitution"
-                },
-                {
-                  label: "三级机构设置",
-                  path: "/threeInstitution"
-                },
-                {
-                  label: "职称设置",
+                  label: "职位分类设置",
                   path: "/titleSetting"
                 },
                 {
                   label: "职位设置",
-                  path: "/jobSettings"
-                },
-                {
-                  label: "职称分类设置",
                   path: "/jobClassification"
                 },
                 {
@@ -220,9 +208,6 @@ export default {
                   label: "薪酬项目设置",
                   path: "/payrollSettings"
                 },
-                {
-                  label: "薪酬发放方法设置"
-                }
               ]
             },
             {

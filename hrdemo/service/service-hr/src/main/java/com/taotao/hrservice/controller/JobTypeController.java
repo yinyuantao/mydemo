@@ -35,7 +35,7 @@ public class JobTypeController {
     }
 
 
-    //添加职位
+    //添加职位分类
     @PostMapping("/addJobType")
     public R addJobType(@RequestBody JobType jobType){
         boolean flag = jobTypeService.save(jobType);
@@ -45,7 +45,7 @@ public class JobTypeController {
             return R.error();
         }
     }
-    //删除职位
+    //删除职位分类
     @DeleteMapping("/removeJobType/{id}")
     public R removeJobType(@PathVariable Integer id){
         boolean flag = jobTypeService.removeById(id);

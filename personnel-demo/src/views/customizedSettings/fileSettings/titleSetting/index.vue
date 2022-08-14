@@ -4,9 +4,9 @@
       <router-link to="/titleSetting/jobTypeFrom">添加</router-link>
     </el-button>
     <el-table :data="JobTitleData" align="left" height="100%" v-if="$route.meta.oneKindShow">
-      <el-table-column prop="numbering" label="职称编号" width="150">
+      <el-table-column prop="numbering" label="职位编号" width="150">
       </el-table-column>
-      <el-table-column prop="jobName" label="职称名称" width="150">
+      <el-table-column prop="jobName" label="职位名称" width="150">
       </el-table-column>
       <el-table-column fixed="right" label="操作" width="150">
         <template slot-scope="scope">

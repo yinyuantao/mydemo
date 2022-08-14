@@ -38,7 +38,7 @@ public class SalaryItemsController {
 
     //删除薪酬项目
     @ApiOperation(value = "逻辑删除薪酬项目")
-    @DeleteMapping("{id}")
+    @DeleteMapping("/removeSalaryItems/{id}")
     public R removeSalaryItems(@PathVariable Integer id){
         boolean flag = salaryItemsService.removeById(id);
         if (flag){

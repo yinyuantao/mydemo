@@ -1,7 +1,7 @@
 <template>
   <div class="left">
     <el-button type="text" size="small">
-      <router-link to="/titleSetting/jobTypeFrom">添加</router-link>
+      <router-link to="/payrollSettings/payrollFrom">添加</router-link>
     </el-button>
     <el-table :data="salarylistData" align="left" height="100%" v-if="$route.meta.oneKindShow">
       <el-table-column prop="syName" label="薪酬项目名称" width="150">
@@ -21,6 +21,7 @@
 
 <script>
 import {selectSalary} from "@/api/api.js";
+import {removeById} from "@/api/api.js";
 
 export default {
   name: "titleSetting",
@@ -31,7 +32,7 @@ export default {
         {
           syId: "",
           syName: "",
-          isDelete: "",
+          isDelete: "0",
         },
       ],
     };
@@ -44,9 +45,9 @@ export default {
       });
     },
     //删除
-    removeJobList(row) {
-      var id = row.jobId;
-      removeJobType(id).then(function (response) {
+    removesalarylist(row) {
+      var id = row.syId;
+      removeById(id).then(function (response) {
       });
       this.reload();
     },
@@ -57,7 +58,7 @@ export default {
   watch: {
     $route(to, from) {
       let ThisPage = to.name;
-      if (ThisPage === 'jobTypeFrom') { //检测组件名字是否等于jobTypeFrom 是的话显示，不是隐藏
+      if (ThisPage === 'payrollFrom') { //检测组件名字是否等于jobTypeFrom 是的话显示，不是隐藏
         this.oneKindShow = false;
       } else {
         this.oneKindShow = true;

@@ -38,7 +38,7 @@ public class PublicPropertyController {
     }
     //增加属性
     @PostMapping("/addProperty")
-    public R addJobType(@RequestBody PublicProperty property){
+    public R addProperty(@RequestBody PublicProperty property){
         boolean flag = propertyService.save(property);
         if (flag){
             return R.ok();

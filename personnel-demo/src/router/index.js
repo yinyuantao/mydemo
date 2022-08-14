@@ -41,6 +41,7 @@ import oneInstitution from '@/views/customizedSettings/fileSettings/oneInstituti
 import publicProperty from '@/views/customizedSettings/fileSettings/publicProperty'
 import threeInstitution from '@/views/customizedSettings/fileSettings/threeInstitution'
 import titleSetting from '@/views/customizedSettings/fileSettings/titleSetting'
+import payrollFrom from '@/views/customizedSettings/payrollSettings/payrollFrom'
 //titleSetiting表单修改
 import jobTypeFrom from '@/views/customizedSettings/fileSettings/titleSetting/jobTypeFrom'
 import twoInstitution from '@/views/customizedSettings/fileSettings/twoInstitution'
@@ -269,7 +270,14 @@ export default new Router({
           component: payrollSettings,
           meta:{ 
             oneKindShow:true,
-          }
+          }, children: [{ 
+            path: '/payrollSettings/payrollFrom',
+            name: 'payrollFrom',
+            component: payrollFrom,
+            meta:{ 
+              kindShow:true,
+            }
+          }]
         },
         { 
           path: '/roleManagement',

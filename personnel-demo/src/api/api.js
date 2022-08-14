@@ -76,3 +76,15 @@ export const selectSalary = () => request({
     url:`/hrservice/salaryItems/selectSalaryItems`,
     method:'get',
 })
+//增加薪酬项目
+export const addSalary = (salarylistData) => request({ 
+    url:`/hrservice/salaryItems/addSalary`,
+    method:'post',
+    data:salarylistData
+})
+
+//逻辑删除薪酬项目
+export const removeById = (id) => request({ 
+    url:`/hrservice/salaryItems/removeSalaryItems/${id}`,
+    method:'delete',
+})

@@ -2,6 +2,7 @@ package com.taotao.hrservice.controller;
 
 
 import com.taotao.commonutils.R;
+import com.taotao.hrservice.entity.JobType;
 import com.taotao.hrservice.entity.PublicProperty;
 import com.taotao.hrservice.entity.SalaryItems;
 import com.taotao.hrservice.service.SalaryItemsService;
@@ -26,15 +27,14 @@ public class SalaryItemsController {
     SalaryItemsService salaryItemsService;
 
     //查询所有薪酬项目
-    @PostMapping("selectSalaryItems")
-    public R selectSalaryItems(@RequestBody SalaryItems salaryItems){
-        List<SalaryItems> SalaryItemslist = salaryItemsService.list(null);
-        if (SalaryItemslist == null){
+    @GetMapping("/selectSalaryItems")
+    public R selectSalaryItems(){
+        List<SalaryItems> salaryItems = salaryItemsService.list(null);
+        if (salaryItems == null){
             return R.error();
-        }else {
-            return R.ok().data("SalaryItemslist" ,SalaryItemslist);
-        }
+        }else return R.ok().data("salaryItems",salaryItems);
     }
+
 
     //删除薪酬项目
     @ApiOperation(value = "逻辑删除薪酬项目")
@@ -44,6 +44,17 @@ public class SalaryItemsController {
         if (flag){
             return R.ok();
         } else {
+            return R.error();
+        }
+    }
+
+    //新增薪酬项目
+    @PostMapping("addSalary")
+    public R addSalary (@RequestBody SalaryItems salaryItems){
+        boolean flag = salaryItemsService.save(salaryItems);
+        if (flag){
+            return R.ok();
+        }else {
             return R.error();
         }
     }

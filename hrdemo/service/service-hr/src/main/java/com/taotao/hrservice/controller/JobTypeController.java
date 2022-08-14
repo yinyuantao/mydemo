@@ -34,6 +34,7 @@ public class JobTypeController {
         }else return R.ok().data("JobList",JobList);
     }
 
+
     //添加职位
     @PostMapping("/addJobType")
     public R addJobType(@RequestBody JobType jobType){
@@ -59,6 +60,17 @@ public class JobTypeController {
     public R getJobById(@PathVariable Integer id){
         JobType list = jobTypeService.getById(id);
         return R.ok().data("list",list);
+    }
+
+    //根据ID修改
+    @PostMapping("/updateById")
+    public R updateById(@RequestBody JobType jobType){
+        boolean flag = jobTypeService.updateById(jobType);
+        if (flag){
+            return R.ok();
+        }else {
+            return R.error();
+        }
     }
 }
 

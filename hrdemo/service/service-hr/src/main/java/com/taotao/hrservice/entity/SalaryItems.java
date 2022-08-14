@@ -35,6 +35,7 @@ public class SalaryItems implements Serializable {
 
     @ApiModelProperty(value = "删除")
     @TableLogic
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Integer isDelete;
 
 

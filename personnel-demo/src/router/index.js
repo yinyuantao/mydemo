@@ -267,6 +267,9 @@ export default new Router({
           path: '/payrollSettings',
           name: '项目薪酬设置',
           component: payrollSettings,
+          meta:{ 
+            oneKindShow:true,
+          }
         },
         { 
           path: '/roleManagement',
@@ -294,3 +297,5 @@ export default new Router({
   ]
   
 })
+
+

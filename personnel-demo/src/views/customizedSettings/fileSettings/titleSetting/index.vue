@@ -72,7 +72,7 @@ export default {
   watch: {
     $route(to, from) {
       let ThisPage = to.name;
-      if (ThisPage === 'jobTypeFrom') { //检测组件名字是否等于fromname 是的话显示，不是隐藏
+      if (ThisPage === 'jobTypeFrom') { //检测组件名字是否等于jobTypeFrom 是的话显示，不是隐藏
         this.oneKindShow = false;
       } else {
         this.oneKindShow = true;

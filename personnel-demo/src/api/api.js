@@ -59,7 +59,20 @@ export const getJobById = (id) => request({
 })
 //根据id修改职称
 export const updateJobList = (JobTitleData) => request({ 
-    url:`/hrservice/firstKind/updateFirstKind`,
+    url:`/hrservice/jobType/updateById`,
     method:'post',
     data:JobTitleData
+})
+
+//添加职称
+export const addJobType = (JobTitleData) => request({ 
+    url:`/hrservice/jobType/addJobType`,
+    method:'post',
+    data:JobTitleData
+})
+
+//薪酬项目设置
+export const selectSalary = () => request({ 
+    url:`/hrservice/salaryItems/selectSalaryItems`,
+    method:'get',
 })

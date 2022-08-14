@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { addFirstKindList } from "@/api/api.js";
+import { addJobType } from "@/api/api.js";
 import { updateJobList } from "@/api/api";
 import { getJobById } from "@/api/api";
 
@@ -37,14 +37,14 @@ export default {
         //根据是否有id值来判断
         saveOrUpdate() {
             if (!this.JobTitleData.jobId) {
-                this.addKindList();
+                this.addJobList();
             } else {
                 this.updatejob();
             }
         },
         //添加分类
         addJobList() {
-            addFirstKindList(this.JobTitleData).then(function (response) {
+            addJobType(this.JobTitleData).then(function (response) {
 
             });
             this.$router.push({ path: "/titleSetting" });

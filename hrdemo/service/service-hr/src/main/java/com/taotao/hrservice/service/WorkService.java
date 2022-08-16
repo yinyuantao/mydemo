@@ -2,6 +2,9 @@ package com.taotao.hrservice.service;
 
 import com.taotao.hrservice.entity.Work;
 import com.baomidou.mybatisplus.extension.service.IService;
+import feign.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -12,5 +15,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2022-08-14
  */
 public interface WorkService extends IService<Work> {
+
 
 }

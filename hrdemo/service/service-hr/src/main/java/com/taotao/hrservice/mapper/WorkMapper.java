@@ -2,6 +2,10 @@ package com.taotao.hrservice.mapper;
 
 import com.taotao.hrservice.entity.Work;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import feign.Param;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * <p>

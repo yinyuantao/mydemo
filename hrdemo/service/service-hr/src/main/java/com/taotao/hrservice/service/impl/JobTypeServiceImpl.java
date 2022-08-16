@@ -1,10 +1,13 @@
 package com.taotao.hrservice.service.impl;
 
 import com.taotao.hrservice.entity.JobType;
+import com.taotao.hrservice.entity.vo.WrokVo;
 import com.taotao.hrservice.mapper.JobTypeMapper;
 import com.taotao.hrservice.service.JobTypeService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -17,4 +20,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class JobTypeServiceImpl extends ServiceImpl<JobTypeMapper, JobType> implements JobTypeService {
 
+    @Override
+    public List<WrokVo> getAllWorkList() {
+        return null;
+    }
 }

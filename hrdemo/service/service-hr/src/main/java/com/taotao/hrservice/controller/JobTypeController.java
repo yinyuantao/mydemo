@@ -4,6 +4,7 @@ package com.taotao.hrservice.controller;
 import com.taotao.commonutils.R;
 import com.taotao.hrservice.entity.ConfigFileFirstKind;
 import com.taotao.hrservice.entity.JobType;
+import com.taotao.hrservice.entity.vo.WrokVo;
 import com.taotao.hrservice.service.JobTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -71,6 +72,13 @@ public class JobTypeController {
         }else {
             return R.error();
         }
+    }
+
+    //根据课程ID查询下面的分类
+    @GetMapping("getAllWork")
+    public R getAllWork(){
+      List<WrokVo> list = jobTypeService.getAllWorkList();
+      return R.ok().data("list",list);
     }
 }
 

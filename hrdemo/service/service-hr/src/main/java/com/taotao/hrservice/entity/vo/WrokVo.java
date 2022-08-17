@@ -1,6 +1,7 @@
 package com.taotao.hrservice.entity.vo;
 
 
+import com.taotao.hrservice.entity.Work;
 import lombok.Data;
 
 import java.util.List;
@@ -14,6 +15,6 @@ public class WrokVo {
 
     private String  jobName;
 
-    private List<WrokVo> children;
+    private List<Work> children;
 
 }

@@ -1,9 +1,11 @@
 package com.taotao.hrservice.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
+
+import java.util.Date;
 import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -16,13 +18,13 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author testjava
- * @since 2022-07-31
+ * @since 2022-08-18
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="Users对象", description="")
-public class Users implements Serializable {
+@ApiModel(value="User对象", description="")
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -31,20 +33,30 @@ public class Users implements Serializable {
     private Integer id;
 
     @ApiModelProperty(value = "用户编号")
-    @TableField("u_id")
     private Integer uId;
 
     @ApiModelProperty(value = "名称")
-    @TableField("u_name")
     private String uName;
 
     @ApiModelProperty(value = "真实姓名")
-    @TableField("u_true_name")
     private String uTrueName;
 
     @ApiModelProperty(value = "用户密码")
-    @TableField("u_password")
     private String uPassword;
+
+
+    @ApiModelProperty(value = "删除结果")
+    @TableLogic(value = "1", delval = "0")
+    @TableField(fill = FieldFill.INSERT)
+    private Integer isDelete;
+
+    @ApiModelProperty(value = "创建时间")
+    @TableField(fill = FieldFill.INSERT)
+    private Date createTime;
+
+    @ApiModelProperty(value = "更新时间")
+    @TableField(fill = FieldFill.UPDATE)
+    private Date updateTime;
 
 
 }

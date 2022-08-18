@@ -1,8 +1,8 @@
 package com.taotao.hrservice.service.impl;
 
-import com.taotao.hrservice.entity.Work;
-import com.taotao.hrservice.mapper.WorkMapper;
-import com.taotao.hrservice.service.WorkService;
+import com.taotao.hrservice.entity.User;
+import com.taotao.hrservice.mapper.UserMapper;
+import com.taotao.hrservice.service.UserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2022-08-18
  */
 @Service
-public class WorkServiceImpl extends ServiceImpl<WorkMapper, Work> implements WorkService {
+public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
 }

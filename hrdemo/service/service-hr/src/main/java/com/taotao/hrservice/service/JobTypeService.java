@@ -2,7 +2,7 @@ package com.taotao.hrservice.service;
 
 import com.taotao.hrservice.entity.JobType;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.taotao.hrservice.entity.vo.WrokVo;
+
 
 import java.util.List;
 
@@ -16,5 +16,5 @@ import java.util.List;
  */
 public interface JobTypeService extends IService<JobType> {
 
-    List<WrokVo> getAllWorkList();
+
 }

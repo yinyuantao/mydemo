@@ -1,6 +1,6 @@
 package com.taotao.hrservice.service;
 
-import com.taotao.hrservice.entity.Work;
+import com.taotao.hrservice.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author testjava
  * @since 2022-08-18
  */
-public interface WorkService extends IService<Work> {
+public interface UserService extends IService<User> {
 
 }

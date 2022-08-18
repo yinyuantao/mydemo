@@ -1,6 +1,6 @@
 package com.taotao.hrservice.mapper;
 
-import com.taotao.hrservice.entity.Users;
+import com.taotao.hrservice.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author testjava
- * @since 2022-07-31
+ * @since 2022-08-18
  */
-public interface UsersMapper extends BaseMapper<Users> {
+public interface UserMapper extends BaseMapper<User> {
 
 }

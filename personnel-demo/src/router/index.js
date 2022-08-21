@@ -49,6 +49,7 @@ import payrollSettings from '@/views/customizedSettings/payrollSettings'
 import categoryform from '@/views/customizedSettings/fileSettings/oneInstitution/categoryform'
 //权限管理
 import userManagement from '@/views/authorityManagement/userManagement'
+import userfrom from '@/views/authorityManagement/userManagement/userfrom'
 import roleManagement from '@/views/authorityManagement/roleManagement'
 //登陆
 import login from '@/views/login'
@@ -288,6 +289,16 @@ export default new Router({
           path: '/userManagement',
           name: '用户管理',
           component: userManagement,
+          meta:{ 
+            oneKindShow:true,
+          },children: [{ 
+            path: '/userManagement/userfrom',
+            name: 'userfrom',
+            component: userfrom,
+            meta:{ 
+              kindShow:true,
+            }
+          }]
         }
     ]
     },

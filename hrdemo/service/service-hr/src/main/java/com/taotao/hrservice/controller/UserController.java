@@ -45,10 +45,17 @@ public class UserController {
 
     }
 
-    @GetMapping("/getJobById/{id}")
-    public R getJobById(@PathVariable Integer id){
-        User list = userService.getById(id);
-        return R.ok().data("list",list);
+    //根据ID更新用户
+    @PostMapping("/updateUserByID")
+    public R updateUserByID (@RequestBody User user){
+        boolean flag = userService.updateById(user);
+        if (flag){
+            return R.ok().message("更新成功");
+        }else {
+            return R.error();
+        }
     }
+
+
 }
 

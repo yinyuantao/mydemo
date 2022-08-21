@@ -1,27 +1,108 @@
 <template>
   <div class="left">
-    <el-button type="warning">查询</el-button>
-    <table border="1px">
-      <tr>
-        <td>用户编号</td>
-        <td>用户名称</td>
-        <td>真实姓名</td>
-        <td>用户密码</td>
-        <td>用户身份</td>
-        <td>操作</td>
-      </tr>
-            <tr>
-        <td>出差补助</td>
-        <td>删除</td>
-      </tr>
-      
-    </table>
+   <el-button type="text" size="small" ><router-link to="/userManagement/userfrom">添加</router-link></el-button>
+
+    <el-table :data="userData" align="left" height="100%" v-if="$route.meta.oneKindShow">
+      <el-table-column prop="uid" label="用户编号" width="150">
+      </el-table-column>
+      <el-table-column prop="uname" label="用户名称" width="150">
+      </el-table-column>
+      <el-table-column
+        prop="utrueName"
+        label="真实姓名"
+        width="150"
+      >
+      </el-table-column>
+
+      <el-table-column
+        prop="upassword"
+        label="用户密码"
+        width="150"
+      >
+      </el-table-column>
+      <el-table-column fixed="right" label="操作" width="150">
+        <template slot-scope="scope">
+          <el-button @click="handleClick(scope.row)" type="text" size="small"
+            >修改</el-button
+          >
+            <!-- </router-link> -->
+          <el-button
+            @click="removeFirstKindList(scope.row)"
+            type="text"
+            size="small"
+            >删除</el-button
+          >
+        </template>
+      </el-table-column>
+    </el-table>
+
+    <router-view v-if="this.$route.meta.kindShow"></router-view>
+
+  
   </div>
 </template>
 
 <script>
+import {getuser} from '@/api/user.js'
+
+
 export default {
-  name: "transferRegistration",
+  name: "userManagement",
+  inject:['reload'],
+  data() {
+    return {
+      userData: [
+        {
+          userId: "",
+          uid: "",
+          uname: "",
+          upassword: "",
+          utrueName: "",
+          isDelete: "0",
+        },
+      ],
+    };
+  },
+  methods: {
+    handleClick(row) {
+      var ffid = row.ffkId
+      console.log(ffid);
+      this.$router.push({ 
+        path: "/oneInstitution/categoryform" ,
+        query: { 
+          "ffkId":ffid
+        }
+        });
+    },
+
+    showUser() {
+      var that = this;
+      getuser().then(function (response) {
+        that.userData = response.data.data.users;
+      });
+    },
+    //删除
+    removeFirstKindList(row) {
+      var id = row.ffkId;
+      deleteFirstKindList(id).then(function (response) {
+      });
+    this.reload();
+    },
+  },
+  created() {
+    this.showUser();
+    console.log();
+  },
+  watch: { 
+      $route(to, from) {
+        let ThisPage = to.name;
+        if(ThisPage === 'fromname'){ //检测组件名字是否等于fromname 是的话显示，不是隐藏
+          this.oneKindShow = false;
+        }else{ 
+          this.oneKindShow = true;
+        }
+    }
+  }
 };
 </script>
 
@@ -31,11 +112,16 @@ export default {
   border-collapse: collapse;
   text-align: center;
 }
+
 th,
 td {
-  border: 1px solid black;
   height: 40px;
   width: 150px;
   text-align: center;
 }
+
+/deep/ .el-table .el-table__cell {
+  text-align: center;
+}
+
 </style>

@@ -1,4 +1,4 @@
-package com.taotao.servicebase.handler;
+package com.taotao.hrservice.config;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;

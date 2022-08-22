@@ -27,7 +27,7 @@
           >
             <!-- </router-link> -->
           <el-button
-            @click="removeFirstKindList(scope.row)"
+            @click="removeUserList(scope.row)"
             type="text"
             size="small"
             >删除</el-button
@@ -44,6 +44,7 @@
 
 <script>
 import {getuser} from '@/api/user.js'
+import { deleteUserINfo } from "@/api/user";
 
 
 export default {
@@ -65,12 +66,12 @@ export default {
   },
   methods: {
     handleClick(row) {
-      var ffid = row.ffkId
-      console.log(ffid);
+      var userId = row.userId
+      console.log(userId);
       this.$router.push({ 
-        path: "/oneInstitution/categoryform" ,
+        path: "/userManagement/userfrom" ,
         query: { 
-          "ffkId":ffid
+          "userId":userId
         }
         });
     },
@@ -82,9 +83,9 @@ export default {
       });
     },
     //删除
-    removeFirstKindList(row) {
-      var id = row.ffkId;
-      deleteFirstKindList(id).then(function (response) {
+    removeUserList(row) {
+      var id = row.userId;
+      deleteUserINfo(id).then(function (response) {
       });
     this.reload();
     },

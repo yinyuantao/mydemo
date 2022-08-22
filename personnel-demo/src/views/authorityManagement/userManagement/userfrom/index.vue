@@ -23,6 +23,9 @@
 
 <script>
 import { addUsers } from "@/api/user";
+import { getUserINfo } from "@/api/user";
+import { updateUserINfo } from "@/api/user";
+
 
 export default {
   inject: ['reload'],
@@ -45,31 +48,33 @@ export default {
       if (!this.userList.userId) {
         this.adduserList();
       } else {
-        this.updateKinList();
+        this.updateUserList();
       }
     },
     //添加分类
     adduserList() {
       addUsers(this.userList).then(function (response) {
-
+        if(response.code==20000){ 
+        this.$router.push({ path: "/userManagement" });
+        this.reload();
+        }
       });
-      // this.$router.push({ path: "/userManagement" });
-      // this.reload();
+
     },
 
     //更新分类
-    updateKinList() {
-      updateFirstKind(this.userList).then(function (response) {
+    updateUserList() {
+      updateUserINfo(this.userList).then(function (response) {
 
       })
-      this.$router.push({ path: "/oneInstitution" });
+      this.$router.push({ path: "/userManagement" });
       this.reload();
     },
 
     //判断路径中是否有id值
     init() {
-      if (this.$route.query && this.$route.query.ffkId) {
-        const id = this.$route.query.ffkId;
+      if (this.$route.query && this.$route.query.userId) {
+        const id = this.$route.query.userId;
         this.getInfo(id);
       } else {
         this.userList = {};
@@ -81,8 +86,8 @@ export default {
     //根据id查询,数据回显
     getInfo(id) {
       var thar = this;
-      getInfoById(id).then(function (response) {
-        thar.userList = response.data.data.list
+      getUserINfo(id).then(function (response) {
+        thar.userList = response.data.data.user
       })
     }
 

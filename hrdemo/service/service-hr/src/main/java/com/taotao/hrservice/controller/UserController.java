@@ -46,11 +46,32 @@ public class UserController {
     }
 
     //根据ID更新用户
-    @PostMapping("/updateUserByID")
-    public R updateUserByID (@RequestBody User user){
+    @PostMapping("/updateUserById")
+    public R updateUserById (@RequestBody User user){
         boolean flag = userService.updateById(user);
         if (flag){
             return R.ok().message("更新成功");
+        }else {
+            return R.error();
+        }
+    }
+    //根据ID查询用户
+    @GetMapping("/getUserById/{id}")
+    public R getUserById(@PathVariable Integer id){
+        User user = userService.getById(id);
+        if (user == null){
+            return R.error();
+        }else {
+            return R.ok().data("user",user);
+        }
+    }
+
+    //根据ID逻辑删除用户
+    @DeleteMapping("removeUserById/{id}")
+    public R removeUserById (@PathVariable Integer id){
+        boolean flag = userService.removeById(id);
+        if (flag){
+            return R.ok();
         }else {
             return R.error();
         }

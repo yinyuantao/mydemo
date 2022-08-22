@@ -43,8 +43,9 @@ public class User implements Serializable {
     @ApiModelProperty(value = "用户密码")
     private String uPassword;
 
-    @ApiModelProperty(value = "逻辑删除")
+
     @TableField(fill = FieldFill.INSERT_UPDATE)
+    @TableLogic(value = "0",delval = "1")
     private Integer isDelete;
 
 

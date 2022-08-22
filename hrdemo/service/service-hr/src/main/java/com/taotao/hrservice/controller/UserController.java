@@ -4,6 +4,7 @@ package com.taotao.hrservice.controller;
 import com.taotao.commonutils.R;
 import com.taotao.hrservice.entity.JobType;
 import com.taotao.hrservice.entity.User;
+import com.taotao.hrservice.entity.vo.LoginVo;
 import com.taotao.hrservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -76,6 +77,14 @@ public class UserController {
             return R.error();
         }
     }
+
+    //登录功能
+    @PostMapping("/loginUser")
+    public R loginUser(@RequestBody LoginVo loginVo){
+       String token = UserService.loginUser(loginVo);
+       return R.ok().data("token",token);
+    }
+
 
 
 }

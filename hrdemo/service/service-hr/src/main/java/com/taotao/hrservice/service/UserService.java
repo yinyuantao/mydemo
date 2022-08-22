@@ -2,6 +2,7 @@ package com.taotao.hrservice.service;
 
 import com.taotao.hrservice.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.taotao.hrservice.entity.vo.LoginVo;
 
 /**
  * <p>
@@ -12,5 +13,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2022-08-18
  */
 public interface UserService extends IService<User> {
+
+
+  String loginUser(LoginVo loginVo);
 
 }

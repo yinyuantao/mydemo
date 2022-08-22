@@ -4,6 +4,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.swagger.models.auth.In;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.util.StringUtils;
 
@@ -21,7 +22,7 @@ public class JwtUtils {
     public static final String APP_SECRET = "ukc8BDbRigUDaY6pZFfWus2jZWLPHO"; //秘钥
 
     //生成token字符串的方法
-    public static String getJwtToken(String id, String nickname){
+    public static String getJwtToken(Integer id, String nickname){
 
         String JwtToken = Jwts.builder()
                 .setHeaderParam("typ", "JWT")

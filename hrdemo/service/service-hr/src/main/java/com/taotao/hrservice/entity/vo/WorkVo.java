@@ -22,5 +22,5 @@ public class WorkVo {
     private String jobName;
 
     @ApiModelProperty(value = "下面的分类")
-    private List<Work> works;
+    private List<Work> work;
 }

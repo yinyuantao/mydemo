@@ -15,7 +15,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author testjava
- * @since 2022-08-18
+ * @since 2022-08-23
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -28,6 +28,8 @@ public class Work implements Serializable {
     @ApiModelProperty(value = "主键")
     @TableId(value = "work_id", type = IdType.AUTO)
     private Integer workId;
+
+    private Integer jobId;
 
     @ApiModelProperty(value = "岗位编号")
     private Integer workNumber;

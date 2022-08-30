@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.taotao.hrservice.mapper.WorkMapper">
-    <resultMap id="BaseResultMap" type="com.taotao.hrservice.entity.vo.WorkVo">
 
-    </resultMap>
-    
-
-    <select id="getAllByWorkId" resultType="com.taotao.hrservice.entity.vo.WorkVo">
-        SELECT * FROM `work`
+    <select id="getAllWorks" resultType="com.taotao.hrservice.entity.vo.WorkVo">
+        SELECT
+            j.numbering,
+            j.job_name,
+            w.work_number,
+            w.word_name
+        FROM
+            job_type as j
+                JOIN
+            `work` as w
+            on j.numbering = w.job_id
     </select>
+    <select id="getByWorkIdWork" resultType="com.taotao.hrservice.entity.Work">
+        SELECT
+            w.work_id,w.work_number,word_name,w.is_delete,w.job_id
+        from
+            `work` as w
+        where w.work_id=#{id}
+    </select>
+
 </mapper>

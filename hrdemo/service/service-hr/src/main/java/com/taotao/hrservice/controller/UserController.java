@@ -79,11 +79,16 @@ public class UserController {
     }
 
 //    //登录功能
-//    @PostMapping("/loginUser")
-//    public R loginUser(@RequestBody LoginVo loginVo){
-//       String token = UserService.loginUser(loginVo);
-//       return R.ok().data("token",token);
-//    }
+    @PostMapping("/loginUser")
+    public R loginUser(@PathVariable String name,@PathVariable String password){
+        boolean flag = userService.login(name,password);
+        if (flag){
+            return R.ok();
+        }else {
+            return R.error();
+        }
+    }
+
 
 
 

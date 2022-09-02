@@ -42,4 +42,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         String token = JwtUtils.getJwtToken(user.getUserId(),user.getUName());
         return token;
     }
+
+    @Override
+    public boolean login(String name, String password) {
+        return false;
+    }
 }

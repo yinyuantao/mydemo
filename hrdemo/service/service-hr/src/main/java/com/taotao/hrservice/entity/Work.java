@@ -38,7 +38,7 @@ public class Work implements Serializable {
     private String wordName;
 
     @ApiModelProperty(value = "是否删除")
-    private Integer isDelete;
+        private Integer isDelete;
 
 
 }

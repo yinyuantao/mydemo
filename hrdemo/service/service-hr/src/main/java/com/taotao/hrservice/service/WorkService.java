@@ -21,5 +21,5 @@ import java.util.List;
 public interface WorkService extends IService<Work> {
 
 
-    List<WorkVo> getAllWork();
+    public List<WorkVo> WorkVoList();
 }

@@ -30,7 +30,7 @@ public class WorkController {
 
     @PostMapping("getAllWork")
     public R getAllWork(){
-        List<WorkVo> list = workService.getAllWork();
+        List<WorkVo> list = workService.WorkVoList();
         return R.ok().data("list",list);
     }
 }
